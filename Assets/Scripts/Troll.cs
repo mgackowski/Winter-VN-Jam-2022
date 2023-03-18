@@ -19,9 +19,6 @@ public class Troll : MonoBehaviour
         bodyRends = GetComponentsInChildren<SpriteRenderer>();
         pupilRends = GetComponentsInChildren<SpriteRenderer>().Where(rend => rend.gameObject.CompareTag("Emissive")).ToArray();
 
-        //testing only
-        Brighten();
-
     }
 
     [YarnCommand("idle")]
