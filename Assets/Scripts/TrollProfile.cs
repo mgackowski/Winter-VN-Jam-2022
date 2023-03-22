@@ -17,14 +17,9 @@ public class TrollProfile : MonoBehaviour
         anim.SetTrigger("SitDown");
     }
 
-    public void StartTalking()
+    public void Talk(bool value)
     {
-        anim.SetBool("Talking", true);
-    }
-
-    public void FinishTalking()
-    {
-        anim.SetBool("Talking", false);
+        anim.SetBool("Talking", value);
     }
 
 }
