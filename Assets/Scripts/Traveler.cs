@@ -16,13 +16,13 @@ public class Traveler : MonoBehaviour
         anim.SetTrigger("Walk");
     }
 
-    [YarnCommand("shiver")]
+    [YarnCommand("tremble")]
     public void Shiver()
     {
         anim.SetTrigger("Shiver");
     }
 
-    [YarnCommand("sit")]
+    [YarnCommand("sitDown")]
     public void SitDown()
     {
         anim.SetTrigger("SitDown");

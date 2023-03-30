@@ -1,0 +1,29 @@
+﻿title: TestingYarn
+tags:
+position: -25,-115
+---
+Here are some options to test with.
+<<jump TestMenu>>
+===
+
+
+title: TestMenu
+position: 3,91
+---
+-> Move characters
+    <<jump TestMenuMovement>>
+===
+
+title: TestMenuMovement
+position: 273,342
+---
+-> Teleport Troll to TravelerDefaultAnchor
+    <<teleport Troll TravelerDefaultAnchor>>
+-> Slide Troll to TravelerDefaultAnchor in 2 seconds
+    <<slide Troll TravelerDefaultAnchor 2>>
+-> Teleport Troll Profile to TravelerDefaultAnchor
+    <<teleport "Troll Profile" TravelerDefaultAnchor>>
+-> Slide Troll Profile to TravelerDefaultAnchor in 3 seconds
+    <<slide "Troll Profile" TravelerDefaultAnchor 3>>
+<<jump TestMenu>>
+===
