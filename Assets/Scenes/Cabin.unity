@@ -129,6 +129,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3945276}
+  - component: {fileID: 3945277}
   m_Layer: 0
   m_Name: TrollDefaultAnchor
   m_TagString: Anchor
@@ -152,6 +153,18 @@ Transform:
   m_Father: {fileID: 559524310}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: -20.569, y: -161.476, z: 0}
+--- !u!114 &3945277
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3945275}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 736d32bc19683994ab778e0a9284575f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!43 &41278449
 Mesh:
   m_ObjectHideFlags: 0
@@ -1767,6 +1780,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 212442775}
+  - component: {fileID: 212442776}
   m_Layer: 0
   m_Name: AtDoorAnchor
   m_TagString: Anchor
@@ -1790,6 +1804,18 @@ Transform:
   m_Father: {fileID: 559524310}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 89.984, z: 0}
+--- !u!114 &212442776
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 212442774}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 736d32bc19683994ab778e0a9284575f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!43 &225411054
 Mesh:
   m_ObjectHideFlags: 0
@@ -4127,7 +4153,7 @@ PrefabInstance:
     - target: {fileID: 501856642186418032, guid: 5bcd145992711794fa081de96ac12da3,
         type: 3}
       propertyPath: m_Name
-      value: Troll Profile
+      value: Troll
       objectReference: {fileID: 0}
     - target: {fileID: 2858036547441352577, guid: 5bcd145992711794fa081de96ac12da3,
         type: 3}
@@ -4217,7 +4243,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7a3be9ea4908cd42b63eb8b68776503, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  anchors: {fileID: 11400000, guid: 3037f9bc6a7a1034b9cc89cee75493e2, type: 2}
 --- !u!1001 &421471734
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14117,7 +14142,7 @@ PrefabInstance:
     - target: {fileID: 2419609848079952448, guid: f5c21c99397340040adf2994469b0b76,
         type: 3}
       propertyPath: m_Name
-      value: Troll
+      value: TrollFront
       objectReference: {fileID: 0}
     - target: {fileID: 5404969840807068560, guid: f5c21c99397340040adf2994469b0b76,
         type: 3}
@@ -14207,7 +14232,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7a3be9ea4908cd42b63eb8b68776503, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  anchors: {fileID: 11400000, guid: 3037f9bc6a7a1034b9cc89cee75493e2, type: 2}
 --- !u!43 &1089463203
 Mesh:
   m_ObjectHideFlags: 0
@@ -16586,7 +16610,7 @@ PrefabInstance:
     - target: {fileID: 1843979983562116839, guid: 382646dc426efbe4abe1ae73ca11e64d,
         type: 3}
       propertyPath: m_Name
-      value: Traveler
+      value: TravelerFront
       objectReference: {fileID: 0}
     - target: {fileID: 3923324506511104201, guid: 382646dc426efbe4abe1ae73ca11e64d,
         type: 3}
@@ -16690,7 +16714,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7a3be9ea4908cd42b63eb8b68776503, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  anchors: {fileID: 11400000, guid: 3037f9bc6a7a1034b9cc89cee75493e2, type: 2}
 --- !u!1001 &1248162119
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18247,6 +18270,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1378132161}
+  - component: {fileID: 1378132162}
   m_Layer: 0
   m_Name: TravelerDefaultAnchor
   m_TagString: Anchor
@@ -18270,6 +18294,18 @@ Transform:
   m_Father: {fileID: 559524310}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: -21.165, y: 180, z: 0}
+--- !u!114 &1378132162
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1378132160}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 736d32bc19683994ab778e0a9284575f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!43 &1381737858
 Mesh:
   m_ObjectHideFlags: 0
@@ -26991,7 +27027,7 @@ PrefabInstance:
     - target: {fileID: 4641016534519476314, guid: 4aa4132f5e0b0244e8f51ed1a6da7cb6,
         type: 3}
       propertyPath: m_Name
-      value: Traveler Back
+      value: Traveler
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -27026,4 +27062,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7a3be9ea4908cd42b63eb8b68776503, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  anchors: {fileID: 11400000, guid: 3037f9bc6a7a1034b9cc89cee75493e2, type: 2}

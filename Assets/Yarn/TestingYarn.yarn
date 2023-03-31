@@ -21,9 +21,9 @@ position: 273,342
     <<teleport Troll TravelerDefaultAnchor>>
 -> Slide Troll to TravelerDefaultAnchor in 2 seconds
     <<slide Troll TravelerDefaultAnchor 2>>
--> Teleport Troll Profile to TravelerDefaultAnchor
-    <<teleport "Troll Profile" TravelerDefaultAnchor>>
--> Slide Troll Profile to TravelerDefaultAnchor in 3 seconds
-    <<slide "Troll Profile" TravelerDefaultAnchor 3>>
+-> Teleport TrollFront to TravelerDefaultAnchor
+    <<teleport TrollFront TravelerDefaultAnchor>>
+-> Slide TrollFront to TravelerDefaultAnchor in 3 seconds
+    <<slide TrollFront TravelerDefaultAnchor 3>>
 <<jump TestMenu>>
 ===

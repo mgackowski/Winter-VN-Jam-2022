@@ -5,20 +5,11 @@ using Yarn.Unity;
 
 public class MovingObject : MonoBehaviour
 {
-    public Anchors anchors;
-
-    void Start()
-    {
-        if(anchors.anchors.Count == 0)
-        {
-            anchors.anchors.AddRange(GameObject.FindGameObjectsWithTag("Anchor"));
-        }
-    }
 
     [YarnCommand("teleport")]
     public void Teleport(string location)
     {
-        GameObject matchingAnchor = anchors.anchors.Find(anchor => anchor.name.Equals(location, StringComparison.OrdinalIgnoreCase));
+        GameObject matchingAnchor = SceneInfo.anchors.Find(anchor => anchor.name.Equals(location, StringComparison.OrdinalIgnoreCase));
         if(matchingAnchor != null)
         { 
             transform.parent = matchingAnchor.transform;
@@ -34,7 +25,7 @@ public class MovingObject : MonoBehaviour
     [YarnCommand("slide")]
     public void Slide(string location, float durationSeconds)
     {
-        GameObject matchingAnchor = anchors.anchors.Find(anchor => anchor.name.Equals(location, StringComparison.OrdinalIgnoreCase));
+        GameObject matchingAnchor = SceneInfo.anchors.Find(anchor => anchor.name.Equals(location, StringComparison.OrdinalIgnoreCase));
         if (matchingAnchor != null)
         {
             StartCoroutine(LerpToAnchor(matchingAnchor.transform, durationSeconds));
