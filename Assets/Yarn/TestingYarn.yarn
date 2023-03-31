@@ -12,6 +12,8 @@ position: 3,91
 ---
 -> Move characters
     <<jump TestMenuMovement>>
+-> Control camera
+    <<jump TestMenuCamera>>
 ===
 
 title: TestMenuMovement
@@ -25,5 +27,23 @@ position: 273,342
     <<teleport TrollFront TravelerDefaultAnchor>>
 -> Slide TrollFront to TravelerDefaultAnchor in 3 seconds
     <<slide TrollFront TravelerDefaultAnchor 3>>
-<<jump TestMenu>>
+-> [nomarkup][back][/nomarkup]
+    <<jump TestMenu>>
+<<jump TestMenuMovement>>
+===
+
+title: TestMenuCamera
+position: 273,342
+---
+-> Cut to InCabinDialogueCam
+    <<cut Camera InCabinDialogueCam>>
+-> Cut to InCabinAloneCam
+    <<cut Camera InCabinAloneCam>>
+-> Dolly to InCabinDialogueCam
+    <<dolly Camera InCabinDialogueCam>>
+-> Dolly to InCabinAloneCam
+    <<dolly Camera InCabinAloneCam>>
+-> [nomarkup][back][/nomarkup]
+    <<jump TestMenu>>
+<<jump TestMenuCamera>>
 ===
