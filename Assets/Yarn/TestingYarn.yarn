@@ -14,6 +14,8 @@ position: 3,91
     <<jump TestMenuMovement>>
 -> Control camera
     <<jump TestMenuCamera>>
+-> Change weather
+    <<jump TestMenuWeather>>
 ===
 
 title: TestMenuMovement
@@ -39,6 +41,8 @@ position: 273,342
     <<cut Camera InCabinDialogueCam>>
 -> Cut to InCabinAloneCam
     <<cut Camera InCabinAloneCam>>
+-> Cut to OutsideTestCam
+    <<cut Camera OutsideTestCam>>
 -> Dolly to InCabinDialogueCam
     <<dolly Camera InCabinDialogueCam>>
 -> Dolly to InCabinAloneCam
@@ -46,4 +50,26 @@ position: 273,342
 -> [nomarkup][back][/nomarkup]
     <<jump TestMenu>>
 <<jump TestMenuCamera>>
+===
+
+title: TestMenuWeather
+position: 273,342
+---
+-> Change time to 0000
+    <<setTimeOfDay Effects 0>>
+-> Change time to 0400
+    <<setTimeOfDay Effects 4>>
+-> Change time to 1200
+    <<setTimeOfDay Effects 12>>
+-> Change time to 1800
+    <<setTimeOfDay Effects 18>>
+-> Heavy snow
+    <<setWeather Effects HeavySnow>>
+-> Light snow
+    <<setWeather Effects LightSnow>>
+-> Clear
+    <<setWeather Effects Clear>>
+-> [nomarkup][back][/nomarkup]
+    <<jump TestMenu>>
+<<jump TestMenuWeather>>
 ===
