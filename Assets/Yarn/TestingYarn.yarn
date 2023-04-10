@@ -16,12 +16,12 @@ position: 0,180
     <<jump TestMenuCamera>>
 -> Change weather
     <<jump TestMenuWeather>>
--> Change object state (in progress)
-    <<jump TestMenu>> 
+-> Change object state
+    <<jump TestMenuObjects>> 
 -> Play character animations
     <<jump TestMenuAnimation>> 
--> Screen transitions (in progress)
-    <<jump TestMenu>>  
+-> Screen transitions
+    <<jump TestMenuScreen>>  
 ===
 
 title: TestMenuMovement
@@ -117,7 +117,7 @@ position: 766,192
 ===
 
 title: TestMenuAnimationTrollFront
-position: 504,408
+position: 529,398
 ---
 -> idle
     <<idle TrollFront>>
@@ -148,7 +148,7 @@ position: 970,407
 ===
 
 title: TestMenuAnimationTravelerFront
-position: 503,-19
+position: 523,-29
 ---
 -> walk
     <<walk TravelerFront>>
@@ -182,4 +182,46 @@ position: 982,-23
 -> [nomarkup][back][/nomarkup]
     <<jump TestMenuAnimation>>
 <<jump TestMenuAnimationTraveler>>
+===
+
+title: TestMenuObjects
+position: 172,662
+---
+-> Door open
+    <<open Door>>
+-> Door closed
+    <<close Door>>
+-> Door forced true
+    <<forced Door true>>
+-> Door forced false
+    <<forced Door false>>
+-> WoodHolder full
+    <<setAmount WoodHolder full>>
+-> WoodHolder half
+    <<setAmount WoodHolder half>>
+-> WoodHolder none
+    <<setAmount WoodHolder none>>
+-> (fire animations not implemented)
+    <<wait 0>>
+-> (chair barricade not implemented)
+    <<wait 0>>
+-> [nomarkup][back][/nomarkup]
+    <<jump TestMenu>>
+<<jump TestMenuObjects>>
+===
+
+title: TestMenuScreen
+position: 290,405
+---
+-> Fade to black
+    <<fade Screen out black 1>>
+-> Fade from black
+    <<fade Screen in black 1>>
+-> Fade to white
+    <<fade Screen out white 1>>
+-> Fade from white
+    <<fade Screen in white 1>>
+-> [nomarkup][back][/nomarkup]
+    <<jump TestMenu>>
+<<jump TestMenuScreen>>
 ===
