@@ -7,7 +7,7 @@ public class Door : MonoBehaviour
 
     void Start()
     {
-        anim = GetComponent<Animator>();
+        anim = GetComponentInChildren<Animator>();
     }
 
     [YarnCommand("open")]

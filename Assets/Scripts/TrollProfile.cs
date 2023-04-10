@@ -8,7 +8,7 @@ public class TrollProfile : MonoBehaviour
 
     void Start()
     {
-        anim = GetComponent<Animator>();
+        anim = GetComponentInChildren<Animator>();
     }
 
     [YarnCommand("sit")]

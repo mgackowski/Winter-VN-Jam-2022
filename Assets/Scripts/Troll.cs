@@ -15,7 +15,7 @@ public class Troll : MonoBehaviour
 
     void Start()
     {
-        anim = GetComponent<Animator>();
+        anim = GetComponentInChildren<Animator>();
         bodyRends = GetComponentsInChildren<SpriteRenderer>();
         pupilRends = GetComponentsInChildren<SpriteRenderer>().Where(rend => rend.gameObject.CompareTag("Emissive")).ToArray();
 

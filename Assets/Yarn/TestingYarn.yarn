@@ -1,6 +1,6 @@
 ﻿title: TestingYarn
 tags:
-position: -25,-115
+position: 0,0
 ---
 Here are some options to test with.
 <<jump TestMenu>>
@@ -8,7 +8,7 @@ Here are some options to test with.
 
 
 title: TestMenu
-position: 3,91
+position: 0,180
 ---
 -> Move characters
     <<jump TestMenuMovement>>
@@ -18,14 +18,14 @@ position: 3,91
     <<jump TestMenuWeather>>
 -> Change object state (in progress)
     <<jump TestMenu>> 
--> Play character animations (in progress)
-    <<jump TestMenu>> 
+-> Play character animations
+    <<jump TestMenuAnimation>> 
 -> Screen transitions (in progress)
     <<jump TestMenu>>  
 ===
 
 title: TestMenuMovement
-position: 273,342
+position: -162,655
 ---
 -> Hide Troll
     <<teleport Troll HiddenAnchor>>
@@ -45,6 +45,8 @@ position: 273,342
     <<teleport TrollFront BlockingDoorAnchor>>
 -> Teleport Troll to AtDoorAnchor
     <<teleport Troll AtDoorAnchor>>
+-> Teleport Traveler to TravelerDefaultAnchor
+    <<teleport Traveler TravelerDefaultAnchor>>
 -> Slide Troll to TrollDefaultAnchor in 2 seconds
     <<slide Troll TrollDefaultAnchor 2>>
 -> [nomarkup][back][/nomarkup]
@@ -53,7 +55,7 @@ position: 273,342
 ===
 
 title: TestMenuCamera
-position: 273,342
+position: -397,433
 ---
 -> Cut to InCabinDialogueCam
     <<cut Camera InCabinDialogueCam>>
@@ -77,7 +79,7 @@ position: 273,342
 ===
 
 title: TestMenuWeather
-position: 273,342
+position: -340,180
 ---
 -> Change time to 0000
     <<setTimeOfDay Effects 0>>
@@ -96,4 +98,90 @@ position: 273,342
 -> [nomarkup][back][/nomarkup]
     <<jump TestMenu>>
 <<jump TestMenuWeather>>
+===
+
+title: TestMenuAnimation
+position: 766,192
+---
+-> Troll (front)
+    <<jump TestMenuAnimationTrollFront>>
+-> Troll (shadow)
+    <<jump TestMenuAnimationTroll>>
+-> Traveler (front)
+    <<jump TestMenuAnimationTravelerFront>>
+-> Traveler (back)
+    <<jump TestMenuAnimationTraveler>>
+-> [nomarkup][back][/nomarkup]
+    <<jump TestMenu>>
+<<jump TestMenuAnimation>>
+===
+
+title: TestMenuAnimationTrollFront
+position: 504,408
+---
+-> idle
+    <<idle TrollFront>>
+-> agitate
+    <<agitate TrollFront>>
+-> sleep
+    <<sleep TrollFront>>
+-> darken
+    <<darken TrollFront>>
+-> brighten
+    <<brighten TrollFront>>
+-> Test speech (not implemented)
+    <<wait 0>>
+-> [nomarkup][back][/nomarkup]
+    <<jump TestMenuAnimation>>
+<<jump TestMenuAnimationTrollFront>>
+===
+
+title: TestMenuAnimationTroll
+position: 970,407
+---
+-> sit
+    <<sit Troll>>
+-> Test speech (not implemented)
+    <<wait 0>>
+-> [nomarkup][back][/nomarkup]
+    <<jump TestMenuAnimation>>
+<<jump TestMenuAnimationTroll>>
+===
+
+title: TestMenuAnimationTravelerFront
+position: 503,-19
+---
+-> walk
+    <<walk TravelerFront>>
+-> tremble
+    <<tremble TravelerFront>>
+-> sitDown
+    <<sitDown TravelerFront>>
+-> stand
+    <<stand TravelerFront>>
+-> Test speech (not implemented)
+    <<wait 0>>
+-> [nomarkup][back][/nomarkup]
+    <<jump TestMenuAnimation>>
+<<jump TestMenuAnimationTravelerFront>>
+===
+
+title: TestMenuAnimationTraveler
+position: 982,-23
+---
+-> shiver true
+    <<shiver Traveler true>>
+-> shiver false
+    <<shiver Traveler false>>
+-> eyes open
+    <<eyes Traveler open>>
+-> eyes halfClosed
+    <<eyes Traveler halfClosed>>
+-> eyes closed
+    <<eyes Traveler closed>>
+-> Test speech (not implemented)
+    <<wait 0>>
+-> [nomarkup][back][/nomarkup]
+    <<jump TestMenuAnimation>>
+<<jump TestMenuAnimationTraveler>>
 ===

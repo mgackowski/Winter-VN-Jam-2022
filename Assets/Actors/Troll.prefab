@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5404969840807068560}
   - component: {fileID: 8995153747873205264}
+  - component: {fileID: 8316361559293784727}
   m_Layer: 0
   m_Name: Troll
   m_TagString: Untagged
@@ -31,7 +32,7 @@ Transform:
   m_Children:
   - {fileID: 3064958860694182649}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &8995153747873205264
 MonoBehaviour:
@@ -50,6 +51,18 @@ MonoBehaviour:
   scaryTrollMaterial: {fileID: 2100000, guid: 64ca4645d3dbf8846a94b3500fa77354, type: 2}
   scaryTrollEyeMaterial: {fileID: 2100000, guid: 65b7925447670ff4980baea92b46a00a,
     type: 2}
+--- !u!114 &8316361559293784727
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2419609848079952448}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7a3be9ea4908cd42b63eb8b68776503, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &4442587535227036455
 PrefabInstance:
   m_ObjectHideFlags: 0

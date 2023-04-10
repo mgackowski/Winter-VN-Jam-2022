@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3923324506511104201}
   - component: {fileID: 4657477746352498071}
+  - component: {fileID: 8808627222591695311}
   m_Layer: 0
   m_Name: Traveler
   m_TagString: Untagged
@@ -31,7 +32,7 @@ Transform:
   m_Children:
   - {fileID: 7742366152927615330}
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &4657477746352498071
 MonoBehaviour:
@@ -43,6 +44,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7163b046a054dd444bcfa44321008051, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &8808627222591695311
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1843979983562116839}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7a3be9ea4908cd42b63eb8b68776503, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &8961528796575948988
@@ -168,6 +181,11 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 3847b9ac7cd978f439e9b49e9180f254, type: 2}
+    - target: {fileID: -4932808256290490097, guid: 2e21f9ecee6f76a40b9255dac64ee858,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.52119
+      objectReference: {fileID: 0}
     - target: {fileID: -4407140984249917168, guid: 2e21f9ecee6f76a40b9255dac64ee858,
         type: 3}
       propertyPath: m_CastShadows
@@ -223,6 +241,11 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 3847b9ac7cd978f439e9b49e9180f254, type: 2}
+    - target: {fileID: 3861185818874436584, guid: 2e21f9ecee6f76a40b9255dac64ee858,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.42307
+      objectReference: {fileID: 0}
     - target: {fileID: 4521321941539187274, guid: 2e21f9ecee6f76a40b9255dac64ee858,
         type: 3}
       propertyPath: m_CastShadows
@@ -233,6 +256,16 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 3847b9ac7cd978f439e9b49e9180f254, type: 2}
+    - target: {fileID: 4658196006944473358, guid: 2e21f9ecee6f76a40b9255dac64ee858,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.58142745
+      objectReference: {fileID: 0}
+    - target: {fileID: 4658196006944473358, guid: 2e21f9ecee6f76a40b9255dac64ee858,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.81359833
+      objectReference: {fileID: 0}
     - target: {fileID: 7401293834983352667, guid: 2e21f9ecee6f76a40b9255dac64ee858,
         type: 3}
       propertyPath: m_LocalPosition.x
