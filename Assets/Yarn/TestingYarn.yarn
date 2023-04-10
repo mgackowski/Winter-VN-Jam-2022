@@ -16,19 +16,37 @@ position: 3,91
     <<jump TestMenuCamera>>
 -> Change weather
     <<jump TestMenuWeather>>
+-> Change object state (in progress)
+    <<jump TestMenu>> 
+-> Play character animations (in progress)
+    <<jump TestMenu>> 
+-> Screen transitions (in progress)
+    <<jump TestMenu>>  
 ===
 
 title: TestMenuMovement
 position: 273,342
 ---
--> Teleport Troll to TravelerDefaultAnchor
-    <<teleport Troll TravelerDefaultAnchor>>
--> Slide Troll to TravelerDefaultAnchor in 2 seconds
-    <<slide Troll TravelerDefaultAnchor 2>>
--> Teleport TrollFront to TravelerDefaultAnchor
-    <<teleport TrollFront TravelerDefaultAnchor>>
--> Slide TrollFront to TravelerDefaultAnchor in 3 seconds
-    <<slide TrollFront TravelerDefaultAnchor 3>>
+-> Hide Troll
+    <<teleport Troll HiddenAnchor>>
+-> Hide TrollFront
+    <<teleport TrollFront HiddenAnchor>>
+-> Hide Traveler
+    <<teleport Traveler HiddenAnchor>>
+-> Hide TravelerFront
+    <<teleport TravelerFront HiddenAnchor>>
+-> Teleport TravelerFront to WildernessAnchor
+    <<teleport TravelerFront WildernessAnchor>>
+-> Teleport TravelerFront to InCabinCentreAnchor
+    <<teleport TravelerFront InCabinCentreAnchor>>
+-> Teleport TrollFront to AtDoorAnchor
+    <<teleport TrollFront AtDoorAnchor>>
+-> Teleport TrollFront to BlockingDoorAnchor
+    <<teleport TrollFront BlockingDoorAnchor>>
+-> Teleport Troll to AtDoorAnchor
+    <<teleport Troll AtDoorAnchor>>
+-> Slide Troll to TrollDefaultAnchor in 2 seconds
+    <<slide Troll TrollDefaultAnchor 2>>
 -> [nomarkup][back][/nomarkup]
     <<jump TestMenu>>
 <<jump TestMenuMovement>>
@@ -41,12 +59,18 @@ position: 273,342
     <<cut Camera InCabinDialogueCam>>
 -> Cut to InCabinAloneCam
     <<cut Camera InCabinAloneCam>>
--> Cut to OutsideTestCam
-    <<cut Camera OutsideTestCam>>
+-> Cut to InCabinDoorCam
+    <<cut Camera InCabinDoorCam>>
+-> Cut to InCabinWindowCam
+    <<cut Camera InCabinWindowCam>>
+-> Cut to OutsideCabinFarCam
+    <<cut Camera OutsideCabinFarCam>>
+-> Cut to OutsideWildernessCam
+    <<cut Camera OutsideWildernessCam>>
+-> Cut to OutsideCabinNearCam
+    <<cut Camera OutsideCabinNearCam>>
 -> Dolly to InCabinDialogueCam
     <<dolly Camera InCabinDialogueCam>>
--> Dolly to InCabinAloneCam
-    <<dolly Camera InCabinAloneCam>>
 -> [nomarkup][back][/nomarkup]
     <<jump TestMenu>>
 <<jump TestMenuCamera>>
@@ -63,7 +87,7 @@ position: 273,342
     <<setTimeOfDay Effects 12>>
 -> Change time to 1800
     <<setTimeOfDay Effects 18>>
--> Heavy snow
+-> Heavy snow (Currently Wilderness cam only)
     <<setWeather Effects HeavySnow>>
 -> Light snow
     <<setWeather Effects LightSnow>>
