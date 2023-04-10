@@ -129,8 +129,6 @@ position: 504,408
     <<darken TrollFront>>
 -> brighten
     <<brighten TrollFront>>
--> Test speech (not implemented)
-    <<wait 0>>
 -> [nomarkup][back][/nomarkup]
     <<jump TestMenuAnimation>>
 <<jump TestMenuAnimationTrollFront>>
@@ -141,8 +139,9 @@ position: 970,407
 ---
 -> sit
     <<sit Troll>>
--> Test speech (not implemented)
-    <<wait 0>>
+-> Test speech
+    Troll: This in an example of speech. If everything works correctly, my lips should start moving when this line starts playing, and stop shortly after the last character is displayed.
+    Choose an option.
 -> [nomarkup][back][/nomarkup]
     <<jump TestMenuAnimation>>
 <<jump TestMenuAnimationTroll>>
@@ -159,8 +158,6 @@ position: 503,-19
     <<sitDown TravelerFront>>
 -> stand
     <<stand TravelerFront>>
--> Test speech (not implemented)
-    <<wait 0>>
 -> [nomarkup][back][/nomarkup]
     <<jump TestMenuAnimation>>
 <<jump TestMenuAnimationTravelerFront>>
@@ -179,8 +176,9 @@ position: 982,-23
     <<eyes Traveler halfClosed>>
 -> eyes closed
     <<eyes Traveler closed>>
--> Test speech (not implemented)
-    <<wait 0>>
+-> Test speech
+    Traveler: This in an example of speech. If everything works correctly, my lips should start moving when this line starts playing, and stop shortly after the last character is displayed.
+    Choose an option.
 -> [nomarkup][back][/nomarkup]
     <<jump TestMenuAnimation>>
 <<jump TestMenuAnimationTraveler>>
