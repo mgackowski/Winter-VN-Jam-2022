@@ -1,0 +1,113 @@
+title: Part01
+---
+<i>Traveller finds the hut</i>
+<i>Traveller enters hut, lights fire</i>
+<i>Troll knocks on door</i>
+-> <i>Traveller invites the troll in</i>
+	<<jump Part02_Opt1_Invite>>
+-> <i>Traveller does nothing</i>
+	<<jump Part02_Opt2_Ignore>>
+-> <i>Traveller refuses the troll in</i>
+	<<jump Part02_Opt3_Refuse>>
+===
+
+title: Part02_Opt1_Invite
+position: 278,-238
+---
+<i>Traveller invites the troll in</i>
+<i>The troll enters the hut gratefully</i>
+<i>The traveller and the troll talk about their journeys</i>
+-> <i>The Traveller shares food with the troll</i>
+	<<jump Part03_Opt1_InviteShareFood>>
+-> <i>The Traveller does not share food with the troll</i>
+	<<jump Part03_Opt2_InviteRefuseFood>>
+===
+
+title: Part02_Opt2_Ignore
+position: 280,1
+---
+<i>Traveller does nothing</i>
+<i>The troll lets himself into the hut</i>
+<i>The traveller and the troll have a tense conversation</i>
+-> <i>The Traveller shares his food with the troll</i>
+	<<jump Part03_Opt3_IgnoreShareFood>>
+-> <i>The Traveller does not share food with the troll</i>
+	<<jump Part03_Opt4_IgnoreRefuseFood>>
+===
+
+title: Part02_Opt3_Refuse
+position: 292,238
+---
+<i>Traveller refuses the troll in</i>
+<i>The traveller remains alone in the hut with the troll's whareabouts unknown</i>
+<<jump Part03_Opt5_Refuse>>
+===
+
+title: Part03_Opt1_InviteShareFood
+position: 543,-333
+---
+<i>The Traveller shares food with the troll</i>
+<i>The fire grows low and the wood runs out</i>
+<<jump Part04_Opt1_FriendlyAdventure>>
+===
+
+title: Part03_Opt2_InviteRefuseFood
+position: 546,-193
+---
+<i>The Traveller does not share food with the troll</i>
+<i>The fire grows low and the wood runs out</i>
+<<jump Part04_Opt2_TrollGone>>
+===
+
+title: Part03_Opt3_IgnoreShareFood
+position: 545,-51
+---
+<i>The Traveller shares his food with the troll</i>
+<i>The fire grows low and the wood runs out</i>
+<<jump Part04_Opt2_TrollGone>>
+===
+
+title: Part03_Opt4_IgnoreRefuseFood
+position: 550,112
+---
+<i>The Traveller does not share food with the troll</i>
+<i>The fire grows low and the wood runs out</i>
+<<jump Part04_Opt3_TrollBlock>>
+===
+
+title: Part03_Opt5_Refuse
+position: 557,272
+---
+<i>The traveller eats, worries about his journey and becomes fearful and bitter</i>
+<i>The fire grows low and the wood runs out</i>
+<<jump Part04_Opt4_TravellerOut>>
+===
+
+title: Part04_Opt1_FriendlyAdventure
+position: 873,-329
+---
+<i>The troll offers to collect more wood</i>
+<i>The Traveller and the troll are friendly, the troll agrees to help with his journey, they start a friendship</i>
+===
+
+title: Part04_Opt2_TrollGone
+position: 870,-124
+---
+<i>The troll offers to collect more wood</i>
+<i>The Traveller survives the night and in the morning the troll is gone</i>
+===
+
+title: Part04_Opt3_TrollBlock
+position: 878,108
+---
+<i>The troll falls asleep in front of the door and the traveller is trapped in the freezing hut</i>
+<i>The Traveller does not survive the night</i>
+===
+
+title: Part04_Opt4_TravellerOut
+position: 879,271
+---
+<i>The traveler must choose to go out into the storm for more wood or freeze</i>
+<i>The traveler perishes inside the storm</i>
+===
+
