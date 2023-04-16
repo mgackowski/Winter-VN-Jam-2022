@@ -31,22 +31,22 @@ position: -162,655
     <<teleport Troll HiddenAnchor>>
 -> Hide TrollFront
     <<teleport TrollFront HiddenAnchor>>
--> Hide Traveler
-    <<teleport Traveler HiddenAnchor>>
--> Hide TravelerFront
-    <<teleport TravelerFront HiddenAnchor>>
--> Teleport TravelerFront to WildernessAnchor
-    <<teleport TravelerFront WildernessAnchor>>
--> Teleport TravelerFront to InCabinCentreAnchor
-    <<teleport TravelerFront InCabinCentreAnchor>>
+-> Hide Traveller
+    <<teleport Traveller HiddenAnchor>>
+-> Hide TravellerFront
+    <<teleport TravellerFront HiddenAnchor>>
+-> Teleport TravellerFront to WildernessAnchor
+    <<teleport TravellerFront WildernessAnchor>>
+-> Teleport TravellerFront to InCabinCentreAnchor
+    <<teleport TravellerFront InCabinCentreAnchor>>
 -> Teleport TrollFront to AtDoorAnchor
     <<teleport TrollFront AtDoorAnchor>>
 -> Teleport TrollFront to BlockingDoorAnchor
     <<teleport TrollFront BlockingDoorAnchor>>
 -> Teleport Troll to AtDoorAnchor
     <<teleport Troll AtDoorAnchor>>
--> Teleport Traveler to TravelerDefaultAnchor
-    <<teleport Traveler TravelerDefaultAnchor>>
+-> Teleport Traveller to TravellerDefaultAnchor
+    <<teleport Traveller TravellerDefaultAnchor>>
 -> Slide Troll to TrollDefaultAnchor in 2 seconds
     <<slide Troll TrollDefaultAnchor 2>>
 -> [nomarkup][back][/nomarkup]
@@ -65,6 +65,8 @@ position: -397,433
     <<cut Camera InCabinDoorCam>>
 -> Cut to InCabinWindowCam
     <<cut Camera InCabinWindowCam>>
+-> Cut to InCabinWoodHolderCam
+    <<cut Camera InCabinWoodHolderCam>>
 -> Cut to OutsideCabinFarCam
     <<cut Camera OutsideCabinFarCam>>
 -> Cut to OutsideWildernessCam
@@ -107,10 +109,10 @@ position: 766,192
     <<jump TestMenuAnimationTrollFront>>
 -> Troll (shadow)
     <<jump TestMenuAnimationTroll>>
--> Traveler (front)
-    <<jump TestMenuAnimationTravelerFront>>
--> Traveler (back)
-    <<jump TestMenuAnimationTraveler>>
+-> Traveller (front)
+    <<jump TestMenuAnimationTravellerFront>>
+-> Traveller (back)
+    <<jump TestMenuAnimationTraveller>>
 -> [nomarkup][back][/nomarkup]
     <<jump TestMenu>>
 <<jump TestMenuAnimation>>
@@ -147,41 +149,41 @@ position: 970,407
 <<jump TestMenuAnimationTroll>>
 ===
 
-title: TestMenuAnimationTravelerFront
+title: TestMenuAnimationTravellerFront
 position: 523,-29
 ---
 -> walk
-    <<walk TravelerFront>>
+    <<walk TravellerFront>>
 -> tremble
-    <<tremble TravelerFront>>
+    <<tremble TravellerFront>>
 -> sitDown
-    <<sitDown TravelerFront>>
+    <<sitDown TravellerFront>>
 -> stand
-    <<stand TravelerFront>>
+    <<stand TravellerFront>>
 -> [nomarkup][back][/nomarkup]
     <<jump TestMenuAnimation>>
-<<jump TestMenuAnimationTravelerFront>>
+<<jump TestMenuAnimationTravellerFront>>
 ===
 
-title: TestMenuAnimationTraveler
+title: TestMenuAnimationTraveller
 position: 982,-23
 ---
 -> shiver true
-    <<shiver Traveler true>>
+    <<shiver Traveller true>>
 -> shiver false
-    <<shiver Traveler false>>
+    <<shiver Traveller false>>
 -> eyes open
-    <<eyes Traveler open>>
+    <<eyes Traveller open>>
 -> eyes halfClosed
-    <<eyes Traveler halfClosed>>
+    <<eyes Traveller halfClosed>>
 -> eyes closed
-    <<eyes Traveler closed>>
+    <<eyes Traveller closed>>
 -> Test speech
-    Traveler: This in an example of speech. If everything works correctly, my lips should start moving when this line starts playing, and stop shortly after the last character is displayed.
+    Traveller: This in an example of speech. If everything works correctly, my lips should start moving when this line starts playing, and stop shortly after the last character is displayed.
     Choose an option.
 -> [nomarkup][back][/nomarkup]
     <<jump TestMenuAnimation>>
-<<jump TestMenuAnimationTraveler>>
+<<jump TestMenuAnimationTraveller>>
 ===
 
 title: TestMenuObjects
@@ -201,10 +203,10 @@ position: 172,662
     <<setAmount WoodHolder half>>
 -> WoodHolder none
     <<setAmount WoodHolder none>>
--> (fire animations not implemented)
-    <<wait 0>>
--> (chair barricade not implemented)
-    <<wait 0>>
+-> Fireplace burning true
+    <<burning Fireplace true>>
+-> Fireplace burning false
+    <<burning Fireplace false>>
 -> [nomarkup][back][/nomarkup]
     <<jump TestMenu>>
 <<jump TestMenuObjects>>

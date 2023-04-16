@@ -1,14 +1,16 @@
 title: Part01
 ---
+<<fade Screen out white 0>>
 <<wait 1>>
-<<setTimeOfDay Effects 12>>
+<<setTimeOfDay Effects 20>>
 <<setWeather Effects HeavySnow>>
 <<teleport Troll HiddenAnchor>>
 <<teleport TrollFront HiddenAnchor>>
-<<teleport Traveler HiddenAnchor>>
-<<teleport TravelerFront HiddenAnchor>>
+<<teleport Traveller HiddenAnchor>>
+<<teleport TravellerFront HiddenAnchor>>
 <<close Door>>
 <<forced Door false>>
+<<burning Fireplace false>>
 <<setAmount WoodHolder full>>
 
 
@@ -16,106 +18,107 @@ title: Part01
 <<fade Screen in white 10>>
 <<wait 2>>
 
-Traveler: *huff* *puff*
-Traveler: Is this... the end...?
+Traveller: *huff* *puff*
+Traveller: Is this... the end...?
 
-<<fade Screen out white 3>>
+<<fade Screen out white 2>>
 <<wait 3>>
-<<teleport TravelerFront WildernessAnchor>>
-<<walk TravelerFront>>
+<<teleport TravellerFront WildernessAnchor>>
+<<walk TravellerFront>>
 <<wait 1>>
-<<fade Screen in white 3>>
+<<fade Screen in white 2>>
 <<wait 1>>
 
-Traveler: I don't know how long I can survive this blizzard.
-Traveler: At least this is just a temporary script.
-<<tremble TravelerFront>>
-Traveler: Libby's version might not be as merciful.
-<<walk TravelerFront>>
-Traveler: *huff* *puff*
+Traveller: I don't know how long I can survive this blizzard.
+Traveller: At least this is just a temporary script.
+<<tremble TravellerFront>>
+Traveller: Libby's version might not be as merciful.
+<<walk TravellerFront>>
+Traveller: *huff* *puff*
 
-<<fade Screen out white 3>>
+<<fade Screen out white 2>>
 <<wait 3>>
 <<cut Camera OutsideCabinFarCam>>
 <<fade Screen in white 1>>
-Traveler: ...?
-Traveler: A cabin...?
+Traveller: ...?
+Traveller: A cabin...?
 <<fade Screen out white 3>>
 <<wait 3>>
 
 (A PoV cutscene of entering the cabin would play here)
 
-<<teleport TravelerFront AtDoorAnchor>>
+<<teleport TravellerFront InCabinCornerAnchor>>
 <<cut Camera InCabinAloneCam>>
 <<fade Screen in white 1>>
 <<wait 1>>
-<<slide TravelerFront InCabinCentreAnchor 3>>
-<<walk TravelerFront>>
+<<slide TravellerFront InCabinCentreAnchor 3>>
+<<walk TravellerFront>>
 <<wait 3>>
-<<stand TravelerFront>>
-Traveler: It looks abandoned.
-Traveler: Which is probably a good thing, considering the stories of ferocious beasts roaming those mountains.
-Traveler: ...!
+<<stand TravellerFront>>
+Traveller: It looks abandoned.
+Traveller: Which is probably a good thing, considering the stories of ferocious beasts roaming these mountains.
+Traveller: ...!
 
-(Camera cuts to wood holder)
-
-Traveler: Whoever was here made sure to leave some firewood.
-Traveler: We live another day.
+<<teleport TravellerFront HiddenAnchor>>
+<<cut Camera InCabinWoodHolderCam>>
+Traveller: Whoever was here made sure to leave some firewood.
+Traveller: We live another day.
 <<setAmount WoodHolder half>>
-
-(Fire lights up)
-(Camera cuts back)
-
 <<wait 1>>
-<<sitDown TravelerFront>>
+<<burning Fireplace true>>
+<<wait 2>>
+<<cut Camera InCabinAloneCam>>
+<<teleport TravellerFront InCabinCentreAnchor>>
 <<wait 1>>
-Traveler: ..........
+<<sitDown TravellerFront>>
+<<wait 1>>
+Traveller: ..........
 <<cut Camera InCabinWindowCam>>
-Traveler: There's no choice but to stay the night.
-Traveler: May as well get some shut-eye.
+Traveller: There's no choice but to stay the night.
+Traveller: May as well get some shut-eye.
 <<fade Screen out black 3>>
 <<wait 4>>
 
 <<forced Door true>>
 KNOCK. KNOCK.
 
-<<teleport TravelerFront HiddenAnchor>>
-<<teleport Traveler TravelerDefaultAnchor>>
+<<teleport TravellerFront HiddenAnchor>>
+<<teleport Traveller TravellerDefaultAnchor>>
 <<teleport Troll AtDoorAnchor>>
 <<cut Camera InCabinDialogueCam>>
-<<eyes Traveler halfClosed>>
+<<eyes Traveller halfClosed>>
 <<wait 0.5>>
 
 <<fade Screen in black 0>>
-<<eyes Traveler open>>
-Traveler: ...?!
+<<eyes Traveller open>>
+Traveller: ...?!
 <<dolly Camera InCabinDoorCam>>
 <<wait 1>>
-???: Let me in!
+"Thunderous voice": Let me in!
 <<wait 2>>
 <<cut Camera InCabinDialogueCam>>
-Traveler: That force!
-Traveler: No human could knock this hard!
-???: Do not ignore me, traveller!
+Traveller: That force!
+Traveller: No human could knock this hard!
+"Thunderous voice": Do not ignore me, traveller!
 <<cut Camera InCabinDoorCam>>
-???: A hearthy smoke billows out your chimney!
+"Thunderous voice": A hearthy smoke billows out of your chimney!
 <<cut Camera InCabinDialogueCam>>
-Traveler: Shit...!
-<<shiver Traveler true>>
-Traveler: What do I do?!
+Traveller: Shit...!
+<<shiver Traveller true>>
+Traveller: What do I do?!
 <<cut Camera InCabinDoorCam>>
-???: The night is... viciously cold.
-???: I am tired... and starved...
+"Thunderous voice": The night is... viciously cold.
+"Thunderous voice": I am tired... and starved...
 <<cut Camera InCabinDialogueCam>>
-Traveler: Are you... human?
+Traveller: Are you... human?
 <<cut Camera InCabinDoorCam>>
-???: ..........
-???: I am what you humans call a "mountain troll".
-???: I seek only shelter from this frigid night.
-???: Traveller. I am asking you politely. Please.
+"Thunderous voice": ..........
+"Thunderous voice": I am what you humans call a "mountain troll".
+Troll: I seek only shelter from this frigid night.
+Troll: Traveller. I am asking you politely. Please.
 <<cut Camera InCabinDialogueCam>>
-Traveler: ...
-Traveler: (Is this a good idea...?)
+Traveller: ...
+Traveller: (Is this a good idea...?)
 
 -> <i>Invite troll
 	<<jump Part02_Opt1_Invite>>

@@ -10,6 +10,8 @@ public class ScreenFader : MonoBehaviour
     [YarnCommand("fade")]
     public void Fade(string inOrOut, string blackOrWhite, float duration)
     {
+        StopAllCoroutines();
+
         Color black = Color.black;
         Color white = Color.white;
         Color clearBlack = Color.clear;
