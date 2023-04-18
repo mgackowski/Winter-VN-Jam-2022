@@ -1,9 +1,8 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Yarn.Unity;
 
-public class Weather : MonoBehaviour
+public class Weather : MonoBehaviour, IStateful
 {
     [SerializeField] GameObject sunlight;
     [SerializeField] GameObject lightSnow;
@@ -11,6 +10,9 @@ public class Weather : MonoBehaviour
     [SerializeField] GameObject dustStorm;
     [SerializeField] float heavyFogLevel = 0.12f;
     [SerializeField] float lightFogLevel = 0.005f;
+
+    string currentWeather;
+    float currentTime;
 
     [YarnCommand("setWeather")]
     public void SetWeather(string weatherType)
@@ -56,6 +58,18 @@ public class Weather : MonoBehaviour
         // 12pm is 90 degrees
     }
 
+    public Dictionary<string, string> GetState()
+    {
+        return new Dictionary<string, string>()
+        {
+            { "weather", currentWeather },
+            { "time", currentTime.ToString() }
+        };
+    }
 
-
+    public void SetState(Dictionary<string, string> keyValuePairs)
+    {
+        SetWeather(keyValuePairs["weather"]);
+        SetTime(float.Parse(keyValuePairs["time"]));
+    }
 }

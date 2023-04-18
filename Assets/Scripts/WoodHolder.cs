@@ -1,10 +1,21 @@
 using Yarn.Unity;
 using UnityEngine;
+using System.Collections.Generic;
 
-public class WoodHolder : MonoBehaviour
+public class WoodHolder : MonoBehaviour, IStateful
 {
     public GameObject woodMore;
     public GameObject woodLess;
+
+    string currentAmount;
+
+    public Dictionary<string, string> GetState()
+    {
+        return new Dictionary<string, string>()
+        {
+            { "amount", currentAmount }
+        };
+    }
 
     [YarnCommand("setAmount")]
     public void SetAmount(string woodAmount)
@@ -24,7 +35,11 @@ public class WoodHolder : MonoBehaviour
                 woodLess.SetActive(false);
                 break;
         }
+        currentAmount = woodAmount;
     }
 
-
+    public void SetState(Dictionary<string, string> keyValuePairs)
+    {
+        SetAmount(keyValuePairs["amount"]);
+    }
 }

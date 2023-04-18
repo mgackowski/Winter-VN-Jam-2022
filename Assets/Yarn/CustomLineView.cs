@@ -7,6 +7,7 @@ using UnityEngine.UI;
 
 namespace Yarn.Unity
 {
+    /*
     /// <summary>
     /// Contains coroutine methods that apply visual effects. This class is used
     /// by <see cref="LineView"/> to handle animating the presentation of lines.
@@ -207,7 +208,7 @@ namespace Yarn.Unity
 
             stopToken?.Complete();
         }
-    }
+    }*/
 
     /// <summary>
     /// A Dialogue View that presents lines of dialogue, using Unity UI
