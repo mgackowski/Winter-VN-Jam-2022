@@ -131,8 +131,39 @@ Traveller: (Is this a good idea...?)
 title: Part02_Opt1_Invite
 position: 278,-238
 ---
-<i>Traveller invites the troll in</i>
-<i>The troll enters the hut gratefully</i>
+<<eyes Traveller closed>>
+<<shiver Traveller false>>
+Traveller: ...... Hold on, I'm going to unlock the door.
+<<forced Door false>>
+<<fade Screen out black 0.5>>
+<<wait 0.5>>
+
+*CLICK*
+
+<<cut Camera InCabinDoorCam>>
+<<eyes Traveller open>>
+<<shiver Traveller true>>
+<<teleport TrollFront AtDoorAnchor>>
+<<darken TrollFront>>
+<<idle TrollFront>>
+<<fade Screen in black 0.5>>
+<<wait 2>>
+<<open Door>>
+<<wait 0.5>>
+<<dolly Camera InCabinDialogueCam>>
+<<wait 4>>
+<<teleport Troll AtDoorAnchor>>
+<<slide Troll TrollDefaultAnchor 3>>
+<<wait 3>>
+<<close Door>>
+<<sit Troll>>
+<<wait 2>>
+
+Traveller: It's... huge!
+Troll: Thank you, traveller. I am ever so relieved by your compassion.
+Traveller: ... D... don't mention it.
+Troll: Were you not afraid?
+
 <i>The traveller and the troll talk about their journeys</i>
 -> <i>The Traveller shares food with the troll</i>
 	<<jump Part03_Opt1_InviteShareFood>>
