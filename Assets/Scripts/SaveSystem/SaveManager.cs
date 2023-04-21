@@ -1,10 +1,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
+using Yarn.Unity;
 
 [CreateAssetMenu(menuName = "SOs/SaveManager")]
 public class SaveManager : ScriptableObject
 {
+    [SerializeField] DialogueRunner dialogueRunner;
 
     [SerializeField] bool autosaveEnabled;
     [SerializeField] Dictionary<IStateful, Dictionary<string, string>> inMemorySave = new Dictionary<IStateful, Dictionary<string, string>>();
@@ -14,7 +16,6 @@ public class SaveManager : ScriptableObject
 
     public void RegisterStatefulObject(IStateful caller)
     {
-        //Dictionary<string, string> properties = caller.GetState();
         inMemorySave.Add(caller, new Dictionary<string, string>());
     }
 
@@ -66,7 +67,6 @@ public class SaveManager : ScriptableObject
                 .Where(x => x.GetType().Name
                 .Equals(opp.statefulComponentName)))
             {
-                //IStateful component = GameObject.Find(opp.statefulObjectName).GetComponent<IStateful>();
 
                 Dictionary<string, string> properties = new Dictionary<string, string>();
                 foreach(Save.ObjectPropertiesPair.SerializableTuple tuple in opp.properties)
@@ -76,11 +76,15 @@ public class SaveManager : ScriptableObject
                 inMemorySave.TryAdd(component, properties);
             }
         }
+
+        DialogueRunner dialogue = GameObject.FindGameObjectWithTag("DialogueSystem").GetComponent<DialogueRunner>();
+        dialogue.Stop();
+        dialogue.StartDialogue(currentPersistentSave.yarnNodeName);
     }
 
     void saveIntoCurrentPersistentSave()
     {
-        //currentPersistentSave.yarnNodeName = "";
+        currentPersistentSave.yarnNodeName = GameObject.FindGameObjectWithTag("DialogueSystem").GetComponent<DialogueRunner>().CurrentNodeName;
 
         currentPersistentSave.savedObjects.Clear();
         foreach(IStateful statefulObject in inMemorySave.Keys)

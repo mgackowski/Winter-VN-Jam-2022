@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Emissive
   - Anchor
+  - DialogueSystem
   layers:
   - Default
   - TransparentFX
