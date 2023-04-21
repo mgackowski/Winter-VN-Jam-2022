@@ -3,14 +3,24 @@ using UnityEngine;
 [RequireComponent(typeof(IStateful))]
 public class SaveableObject : MonoBehaviour
 {
-    void Awake()
+    [SerializeField] SaveManager saveManagerSO;
+
+    void Start()
     {
-        SaveManager.RegisterStatefulObject(GetComponent<IStateful>());
+        IStateful[] statefulObjects = GetComponents<IStateful>();
+        foreach (IStateful statefulObject in statefulObjects)
+        {
+            saveManagerSO.RegisterStatefulObject(statefulObject);
+        }
     }
 
     private void OnDestroy()
     {
-        SaveManager.DeregisterStatefulObject(GetComponent<IStateful>());
+        IStateful[] statefulObjects = GetComponents<IStateful>();
+        foreach (IStateful statefulObject in statefulObjects)
+        {
+            saveManagerSO.DeregisterStatefulObject(statefulObject);
+        }
     }
 
 }

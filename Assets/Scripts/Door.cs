@@ -5,8 +5,7 @@ using System.Collections.Generic;
 public class Door : MonoBehaviour, IStateful
 {
     Animator anim;
-
-    bool openState;
+    bool openState = false;
 
     void Start()
     {

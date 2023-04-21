@@ -11,8 +11,8 @@ public class Weather : MonoBehaviour, IStateful
     [SerializeField] float heavyFogLevel = 0.12f;
     [SerializeField] float lightFogLevel = 0.005f;
 
-    string currentWeather;
-    float currentTime;
+    string currentWeather = "heavySnow";
+    float currentTime = 23f;
 
     [YarnCommand("setWeather")]
     public void SetWeather(string weatherType)
@@ -41,6 +41,7 @@ public class Weather : MonoBehaviour, IStateful
                 Debug.LogError("Incorrect weather parameter provided.");
                 break;
         }
+        currentWeather = weatherType;
 
     }
 
@@ -56,6 +57,8 @@ public class Weather : MonoBehaviour, IStateful
         //sunlight.transform.eulerAngles = currentRotation;
         // 6am is 0 degrees
         // 12pm is 90 degrees
+
+        currentTime = hourOfDay;
     }
 
     public Dictionary<string, string> GetState()
@@ -69,7 +72,7 @@ public class Weather : MonoBehaviour, IStateful
 
     public void SetState(Dictionary<string, string> keyValuePairs)
     {
-        SetWeather(keyValuePairs["weather"]);
-        SetTime(float.Parse(keyValuePairs["time"]));
+        if (keyValuePairs.ContainsKey("weather")) SetWeather(keyValuePairs["weather"]);
+        if (keyValuePairs.ContainsKey("time")) SetTime(float.Parse(keyValuePairs["time"]));
     }
 }

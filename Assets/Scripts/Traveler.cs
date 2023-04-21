@@ -1,9 +1,12 @@
 using Yarn.Unity;
 using UnityEngine;
+using System.Collections.Generic;
 
-public class Traveler : MonoBehaviour
+public class Traveler : MonoBehaviour, IStateful
 {
     private Animator anim;
+
+    string lastAnimTrigger;
 
     void Start()
     {
@@ -13,24 +16,51 @@ public class Traveler : MonoBehaviour
     [YarnCommand("walk")]
     public void Walk()
     {
-        anim.SetTrigger("Walk");
+        string triggerName = "Walk";
+        anim.SetTrigger(triggerName);
+        lastAnimTrigger = triggerName;
     }
 
     [YarnCommand("tremble")]
     public void Shiver()
     {
-        anim.SetTrigger("Shiver");
+        string triggerName = "Shiver";
+        anim.SetTrigger(triggerName);
+        lastAnimTrigger = triggerName;
     }
 
     [YarnCommand("sitDown")]
     public void SitDown()
     {
-        anim.SetTrigger("SitDown");
+        string triggerName = "SitDown";
+        anim.SetTrigger(triggerName);
+        lastAnimTrigger = triggerName;
     }
 
     [YarnCommand("stand")]
     public void Stand()
     {
-        anim.SetTrigger("Stand");
+        string triggerName = "Stand";
+        anim.SetTrigger(triggerName);
+        lastAnimTrigger = triggerName;
+    }
+
+    public Dictionary<string, string> GetState()
+    {
+        return new Dictionary<string, string>()
+        {
+            { "lastAnimTrigger", lastAnimTrigger }
+        };
+    }
+
+    public void SetState(Dictionary<string, string> keyValuePairs)
+    {
+        if(keyValuePairs.ContainsKey("lastAnimTrigger"))
+        {
+            string savedTriggerName = keyValuePairs["lastAnimTrigger"];
+            anim.SetTrigger(savedTriggerName);
+            lastAnimTrigger = savedTriggerName;
+        }
+
     }
 }

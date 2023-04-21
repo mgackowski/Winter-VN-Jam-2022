@@ -8,8 +8,8 @@ public class CameraSwitcher : MonoBehaviour, IStateful
     CinemachineBrain brain;
     CinemachineBlendDefinition cut = new CinemachineBlendDefinition(CinemachineBlendDefinition.Style.Cut, 0f);
     CinemachineBlendDefinition easeInOut = new CinemachineBlendDefinition(CinemachineBlendDefinition.Style.EaseInOut, 3f);
-    
-    CinemachineVirtualCamera currentCam;
+
+    CinemachineVirtualCamera currentCam = null;
 
     private void Start()
     {
@@ -50,10 +50,9 @@ public class CameraSwitcher : MonoBehaviour, IStateful
 
     public Dictionary<string, string> GetState()
     {
-        return new Dictionary<string, string>()
-        {
-            { "currentCam", currentCam.name }
-        };
+        Dictionary<string, string> result = new Dictionary<string, string>();
+        if (currentCam != null) result.Add("currentCam", currentCam.name);
+        return result;
     }
 
     public void SetState(Dictionary<string, string> keyValuePairs)
