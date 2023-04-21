@@ -53,4 +53,9 @@ public class Door : MonoBehaviour, IStateful
         SetForced(bool.Parse(keyValuePairs["forced"]));
 
     }
+
+    public string GetObjectName()
+    {
+        return gameObject.name;
+    }
 }

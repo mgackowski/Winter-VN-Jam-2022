@@ -103,4 +103,9 @@ public class Troll : MonoBehaviour, IStateful
             Brighten();
         }
     }
+
+    public string GetObjectName()
+    {
+        return gameObject.name;
+    }
 }

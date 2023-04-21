@@ -42,4 +42,9 @@ public class WoodHolder : MonoBehaviour, IStateful
     {
         SetAmount(keyValuePairs["amount"]);
     }
+
+    public string GetObjectName()
+    {
+        return gameObject.name;
+    }
 }

@@ -56,4 +56,9 @@ public class TravelerBack : MonoBehaviour, IStateful
         anim.SetBool("Shivering", bool.Parse(keyValuePairs["eyesClosed"]));
         anim.SetBool("Shivering", bool.Parse(keyValuePairs["eyesHalfClosed"]));
     }
+
+    public string GetObjectName()
+    {
+        return gameObject.name;
+    }
 }

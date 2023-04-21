@@ -63,4 +63,9 @@ public class Traveler : MonoBehaviour, IStateful
         }
 
     }
+
+    public string GetObjectName()
+    {
+        return gameObject.name;
+    }
 }

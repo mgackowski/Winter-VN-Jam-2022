@@ -87,5 +87,10 @@ public class ScreenFader : MonoBehaviour, IStateful
         rect.color = to;
     }
 
+    public string GetObjectName()
+    {
+        return gameObject.name;
+    }
+
 
 }

@@ -59,4 +59,9 @@ public class CameraSwitcher : MonoBehaviour, IStateful
     {
         Cut(SceneInfo.cameras.Find(cam => cam.name.Equals(keyValuePairs["currentCam"])));
     }
+
+    public string GetObjectName()
+    {
+        return gameObject.name;
+    }
 }

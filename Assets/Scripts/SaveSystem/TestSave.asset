@@ -1,0 +1,98 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474b147544bdc1c4490e73a3179bde08, type: 3}
+  m_Name: TestSave
+  m_EditorClassIdentifier: 
+  yarnNodeName: Part02_Opt1_Invite
+  savedObjects:
+  - statefulObjectName: Door
+    statefulComponentName: Door
+    properties:
+    - key: open
+      value: False
+    - key: forced
+      value: True
+  - statefulObjectName: WoodHolder
+    statefulComponentName: WoodHolder
+    properties:
+    - key: amount
+      value: half
+  - statefulObjectName: Fireplace
+    statefulComponentName: Fireplace
+    properties:
+    - key: burning
+      value: True
+  - statefulObjectName: Camera
+    statefulComponentName: CameraSwitcher
+    properties:
+    - key: currentCam
+      value: InCabinDialogueCam
+  - statefulObjectName: TravellerFront
+    statefulComponentName: Traveler
+    properties:
+    - key: lastAnimTrigger
+      value: SitDown
+  - statefulObjectName: TravellerFront
+    statefulComponentName: MovingObject
+    properties:
+    - key: location
+      value: HiddenAnchor
+  - statefulObjectName: Effects
+    statefulComponentName: Weather
+    properties:
+    - key: weather
+      value: HeavySnow
+    - key: time
+      value: 20
+  - statefulObjectName: Troll
+    statefulComponentName: TrollProfile
+    properties:
+    - key: sitting
+      value: False
+  - statefulObjectName: Troll
+    statefulComponentName: MovingObject
+    properties:
+    - key: location
+      value: AtDoorAnchor
+  - statefulObjectName: TrollFront
+    statefulComponentName: Troll
+    properties:
+    - key: lastAnimTrigger
+      value: 
+    - key: darkened
+      value: False
+  - statefulObjectName: TrollFront
+    statefulComponentName: MovingObject
+    properties:
+    - key: location
+      value: HiddenAnchor
+  - statefulObjectName: Screen
+    statefulComponentName: ScreenFader
+    properties:
+    - key: fadedInOut
+      value: in
+    - key: fadedColor
+      value: black
+  - statefulObjectName: Traveller
+    statefulComponentName: TravelerBack
+    properties:
+    - key: shivering
+      value: False
+    - key: eyesClosed
+      value: True
+    - key: eyesHalfClosed
+      value: False
+  - statefulObjectName: Traveller
+    statefulComponentName: MovingObject
+    properties:
+    - key: location
+      value: TravellerDefaultAnchor

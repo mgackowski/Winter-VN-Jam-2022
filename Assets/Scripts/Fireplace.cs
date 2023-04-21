@@ -41,4 +41,9 @@ public class Fireplace : MonoBehaviour, IStateful
     {
         setFireBurning(bool.Parse(keyValuePairs["burning"]));
     }
+
+    public string GetObjectName()
+    {
+        return gameObject.name;
+    }
 }

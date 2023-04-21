@@ -75,4 +75,9 @@ public class Weather : MonoBehaviour, IStateful
         if (keyValuePairs.ContainsKey("weather")) SetWeather(keyValuePairs["weather"]);
         if (keyValuePairs.ContainsKey("time")) SetTime(float.Parse(keyValuePairs["time"]));
     }
+
+    public string GetObjectName()
+    {
+        return gameObject.name;
+    }
 }

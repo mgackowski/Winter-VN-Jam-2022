@@ -72,6 +72,11 @@ public class MovingObject : MonoBehaviour, IStateful
 
     public void SetState(Dictionary<string, string> keyValuePairs)
     {
-        Teleport(keyValuePairs["location"]);
+        if(keyValuePairs.ContainsKey("location")) Teleport(keyValuePairs["location"]);
+    }
+
+    public string GetObjectName()
+    {
+        return gameObject.name;
     }
 }

@@ -12,4 +12,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60bc5f4cb859b0b48849b3a7f699d253, type: 3}
   m_Name: DefaultSaveManager
   m_EditorClassIdentifier: 
-  saveEnabled: 1
+  autosaveEnabled: 0
+  currentPersistentSave: {fileID: 11400000, guid: c1927a87886df774cb4bab42ee0fbff1,
+    type: 2}
+  allPersistentSaves:
+  - {fileID: 0}
+  - {fileID: 11400000, guid: d76ca21d457070c4292f710b96690ef9, type: 2}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}

@@ -39,4 +39,9 @@ public class TrollProfile : MonoBehaviour, IStateful
             SetIdle();
         }
     }
+
+    public string GetObjectName()
+    {
+        return gameObject.name;
+    }
 }
