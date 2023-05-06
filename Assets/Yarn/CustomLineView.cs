@@ -684,6 +684,18 @@ namespace Yarn.Unity
                 // started it.
                 currentStopToken.Interrupt();
             }
+
+            //CUSTOM BIT
+            if (travelerActor != null && travelerNames.Contains<string>(currentLine.CharacterName))
+            {
+                travelerActor.Talk(false);
+            }
+            if (trollActor != null && trollNames.Contains<string>(currentLine.CharacterName))
+            {
+                trollActor.Talk(false);
+            }
+
+
             // No animation is now running. Signal that we want to
             // interrupt the line instead.
             requestInterrupt?.Invoke();
