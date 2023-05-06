@@ -12,7 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60bc5f4cb859b0b48849b3a7f699d253, type: 3}
   m_Name: DefaultSaveManager
   m_EditorClassIdentifier: 
+  dialogueRunner: {fileID: 0}
   autosaveEnabled: 0
+  loadOnEnable: 1
   currentPersistentSave: {fileID: 11400000, guid: c1927a87886df774cb4bab42ee0fbff1,
     type: 2}
   allPersistentSaves:

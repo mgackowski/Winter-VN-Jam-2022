@@ -2,21 +2,46 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
 using Yarn.Unity;
+using System;
+using System.Collections;
 
-[CreateAssetMenu(menuName = "SOs/SaveManager")]
-public class SaveManager : ScriptableObject
+public class SaveManager : MonoBehaviour
 {
     [SerializeField] DialogueRunner dialogueRunner;
+    bool dialogueRunnerReady = false;
 
     [SerializeField] bool autosaveEnabled;
-    [SerializeField] Dictionary<IStateful, Dictionary<string, string>> inMemorySave = new Dictionary<IStateful, Dictionary<string, string>>();
+    [SerializeField] bool loadOnAwake;
+    [NonSerialized] Dictionary<IStateful, Dictionary<string, string>> inMemorySave = new Dictionary<IStateful, Dictionary<string, string>>();
 
     [SerializeField] Save currentPersistentSave;
-    [SerializeField] List<Save> allPersistentSaves;
+    [SerializeField] List<Save> allPersistentSaves; //Could become SO to store them across scenes
+
+    private void Awake()
+    {
+        if (loadOnAwake)
+        {
+            dialogueRunnerReady = false;
+            LoadFromSaved();
+        }
+    }
+
+    public void MarkDialogueRunnerReady()
+    {
+        dialogueRunnerReady = true;
+    }
+
+    IEnumerator WaitForDialogueReady()
+    {
+        yield return new WaitUntil(() => dialogueRunnerReady);
+
+    }
 
     public void RegisterStatefulObject(IStateful caller)
     {
-        inMemorySave.Add(caller, new Dictionary<string, string>());
+        //Callers at initial registration may interfere with automatic save
+        //loading; if there's a bug, try exerting more control over this process 
+        inMemorySave.TryAdd(caller, new Dictionary<string, string>());
     }
 
     public void DeregisterStatefulObject(IStateful caller)
@@ -44,7 +69,16 @@ public class SaveManager : ScriptableObject
 
     public void LoadFromSaved()
     {
+        StartCoroutine(loadFromSaved());
+    }
+
+    IEnumerator loadFromSaved()
+    {
+        Debug.Log("loadFromSaved() called");
+        yield return new WaitUntil(() => dialogueRunnerReady);
+
         loadFromCurrentPersistentSave();
+        startDialogueFromNode(currentPersistentSave.yarnNodeName);
 
         List<IStateful> keys = new List<IStateful>(inMemorySave.Keys);
         foreach (IStateful key in keys)
@@ -77,6 +111,10 @@ public class SaveManager : ScriptableObject
             }
         }
 
+    }
+
+    void startDialogueFromNode(string nodeName)
+    {
         DialogueRunner dialogue = GameObject.FindGameObjectWithTag("DialogueSystem").GetComponent<DialogueRunner>();
         dialogue.Stop();
         dialogue.StartDialogue(currentPersistentSave.yarnNodeName);
