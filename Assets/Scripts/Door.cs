@@ -5,7 +5,6 @@ using System.Collections.Generic;
 public class Door : MonoBehaviour, IStateful
 {
     Animator anim;
-    bool openState = false;
 
     void Start()
     {
@@ -15,15 +14,13 @@ public class Door : MonoBehaviour, IStateful
     [YarnCommand("open")]
     public void Open()
     {
-        anim.SetTrigger("Open");
-        openState = true;
+        anim.SetBool("Open", true);
     }
 
     [YarnCommand("close")]
     public void Close()
     {
-        anim.SetTrigger("Close");
-        openState = false;
+        anim.SetBool("Open", false);
     }
 
     [YarnCommand("forced")]
@@ -36,7 +33,7 @@ public class Door : MonoBehaviour, IStateful
     {
         return new Dictionary<string, string>()
         {
-            { "open", openState.ToString() },
+            { "open", anim.GetBool("Open").ToString() },
             { "forced", anim.GetBool("Forced").ToString() }
         };
     }
