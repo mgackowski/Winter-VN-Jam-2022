@@ -3,6 +3,7 @@ using UnityEngine;
 [RequireComponent(typeof(IStateful))]
 public class SaveableObject : MonoBehaviour
 {
+    //Consider searching for SaveManager or making it static
     [SerializeField] SaveManager saveManagerSO;
 
     void Start()

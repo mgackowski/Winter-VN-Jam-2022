@@ -14,7 +14,7 @@ public class Troll : MonoBehaviour, IStateful
     private Renderer[] bodyRends;
     private Renderer[] pupilRends;
 
-    string lastAnimTrigger;
+    string lastAnimTrigger = "";
     bool darkened;
 
     void Start()
@@ -29,7 +29,7 @@ public class Troll : MonoBehaviour, IStateful
     public void SetIdle()
     {
         string triggerName = "Calm";
-        anim.SetTrigger("triggerName");
+        anim.SetTrigger(triggerName);
         lastAnimTrigger = triggerName;
     }
 
@@ -37,7 +37,7 @@ public class Troll : MonoBehaviour, IStateful
     public void SetAgitate()
     {
         string triggerName = "Agitate";
-        anim.SetTrigger("triggerName");
+        anim.SetTrigger(triggerName);
         lastAnimTrigger = triggerName;
     }
 
@@ -45,7 +45,7 @@ public class Troll : MonoBehaviour, IStateful
     public void SetSleep()
     {
         string triggerName = "Sleep";
-        anim.SetTrigger("triggerName");
+        anim.SetTrigger(triggerName);
         lastAnimTrigger = triggerName;
     }
 
@@ -91,8 +91,11 @@ public class Troll : MonoBehaviour, IStateful
         if(keyValuePairs.ContainsKey("lastAnimTrigger"))
         {
             string lastTrigger = keyValuePairs["lastAnimTrigger"];
-            anim.SetTrigger(lastTrigger);
-            lastAnimTrigger = lastTrigger;
+            if (lastTrigger != "")
+            {
+                anim.SetTrigger(lastTrigger);
+                lastAnimTrigger = lastTrigger;
+            } 
         }
         if (bool.Parse(keyValuePairs["darkened"]))
         {
