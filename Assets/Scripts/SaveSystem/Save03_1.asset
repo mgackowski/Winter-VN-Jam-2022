@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 474b147544bdc1c4490e73a3179bde08, type: 3}
-  m_Name: Save02_1
+  m_Name: Save03_1
   m_EditorClassIdentifier: 
-  yarnNodeName: Part02_Opt1_Invite
+  yarnNodeName: Part03_Opt1_InviteShareFood
   savedObjects:
   - statefulObjectName: Door
     statefulComponentName: Door
@@ -20,7 +20,7 @@ MonoBehaviour:
     - key: open
       value: False
     - key: forced
-      value: True
+      value: False
   - statefulObjectName: WoodHolder
     statefulComponentName: WoodHolder
     properties:
@@ -57,24 +57,24 @@ MonoBehaviour:
     statefulComponentName: TrollProfile
     properties:
     - key: sitting
-      value: False
+      value: True
   - statefulObjectName: Troll
     statefulComponentName: MovingObject
     properties:
     - key: location
-      value: HiddenAnchor
+      value: TrollDefaultAnchor
   - statefulObjectName: TrollFront
     statefulComponentName: Troll
     properties:
     - key: lastAnimTrigger
-      value: 
+      value: Calm
     - key: darkened
-      value: False
+      value: True
   - statefulObjectName: TrollFront
     statefulComponentName: MovingObject
     properties:
     - key: location
-      value: HiddenAnchor
+      value: AtDoorAnchor
   - statefulObjectName: Screen
     statefulComponentName: ScreenFader
     properties:

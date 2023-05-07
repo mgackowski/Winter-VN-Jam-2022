@@ -1,4 +1,5 @@
 title: EmptyNode
+position: -242,3
 ---
 ===
 
@@ -88,7 +89,7 @@ KNOCK. KNOCK.
 
 <<teleport TravellerFront HiddenAnchor>>
 <<teleport Traveller TravellerDefaultAnchor>>
-<<teleport Troll AtDoorAnchor>>
+<<teleport Troll HiddenAnchor>>
 <<cut Camera InCabinDialogueCam>>
 <<eyes Traveller halfClosed>>
 <<wait 0.5>>
@@ -168,10 +169,23 @@ Troll: Thank you, traveller. I am ever so relieved by your compassion.
 Traveller: ... D... don't mention it.
 Troll: Were you not afraid?
 
-<i>The traveller and the troll talk about their journeys</i>
--> <i>The Traveller shares food with the troll</i>
+<<eyes Traveller closed>>
+<<shiver Traveller false>>
+
+Traveller: Afraid? No way. I've seen much greater beasts on my journeys.
+Troll: Is that so?
+Traveller: D- damn straight.
+Troll: That is fair. I am perhaps only half the size of my kin wandering these lands.
+<<eyes Traveller open>>
+Troll: Why, you should see my brother! Tall as a mountain! He could eat a caribou whole and yet have room for more.
+Traveller: ...
+Troll: Speaking of food... Traveller, I have been wandering for days on end.
+Troll: You wouldn't mind sharing some of that food I see you holding?
+
+Traveller: (Should I share my food with him...?)
+-> <i>Share food</i>
 	<<jump Part03_Opt1_InviteShareFood>>
--> <i>The Traveller does not share food with the troll</i>
+-> <i>Refuse food</i>
 	<<jump Part03_Opt2_InviteRefuseFood>>
 ===
 

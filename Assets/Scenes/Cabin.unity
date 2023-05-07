@@ -16913,6 +16913,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 642101969}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &735365876 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3579681405068720530, guid: 7f29e5f7ffdea4a6793cefb278b61f0c,
+    type: 3}
+  m_PrefabInstance: {fileID: 642101969}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4bec29c0a230741bdac901dba8da47ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!43 &753245248
 Mesh:
   m_ObjectHideFlags: 0
@@ -22775,17 +22787,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60bc5f4cb859b0b48849b3a7f699d253, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogueRunner: {fileID: 0}
+  dialogueRunner: {fileID: 735365876}
   autosaveEnabled: 0
   loadOnAwake: 1
   currentPersistentSave: {fileID: 11400000, guid: d76ca21d457070c4292f710b96690ef9,
     type: 2}
   allPersistentSaves:
   - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 11400000, guid: 648db06db5e8e9942b874000db43f832, type: 2}
   - {fileID: 11400000, guid: d76ca21d457070c4292f710b96690ef9, type: 2}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 11400000, guid: 8dc00fa4c2f297b43ae9c540061bf638, type: 2}
+  - {fileID: 11400000, guid: af64733e55a166e4bb8d16d9734e025f, type: 2}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
