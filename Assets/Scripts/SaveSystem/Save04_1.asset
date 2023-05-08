@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 474b147544bdc1c4490e73a3179bde08, type: 3}
-  m_Name: Save03_2
+  m_Name: Save04_1
   m_EditorClassIdentifier: 
-  yarnNodeName: Part03_Opt2_InviteRefuseFood
+  yarnNodeName: Part04_Opt1_FriendlyAdventure
   savedObjects:
   - statefulObjectName: Door
     statefulComponentName: Door
@@ -25,7 +25,7 @@ MonoBehaviour:
     statefulComponentName: WoodHolder
     properties:
     - key: amount
-      value: half
+      value: none
   - statefulObjectName: Fireplace
     statefulComponentName: Fireplace
     properties:
@@ -35,7 +35,7 @@ MonoBehaviour:
     statefulComponentName: CameraSwitcher
     properties:
     - key: currentCam
-      value: InCabinDialogueCam
+      value: InCabinWindowCam
   - statefulObjectName: TravellerFront
     statefulComponentName: Traveler
     properties:
@@ -88,7 +88,7 @@ MonoBehaviour:
     - key: shivering
       value: False
     - key: eyesClosed
-      value: True
+      value: False
     - key: eyesHalfClosed
       value: False
   - statefulObjectName: Traveller

@@ -22790,15 +22790,15 @@ MonoBehaviour:
   dialogueRunner: {fileID: 735365876}
   autosaveEnabled: 0
   loadOnAwake: 1
-  currentPersistentSave: {fileID: 11400000, guid: d76ca21d457070c4292f710b96690ef9,
+  currentPersistentSave: {fileID: 11400000, guid: 8dc00fa4c2f297b43ae9c540061bf638,
     type: 2}
   allPersistentSaves:
   - {fileID: 0}
   - {fileID: 11400000, guid: 648db06db5e8e9942b874000db43f832, type: 2}
   - {fileID: 11400000, guid: d76ca21d457070c4292f710b96690ef9, type: 2}
   - {fileID: 11400000, guid: 8dc00fa4c2f297b43ae9c540061bf638, type: 2}
+  - {fileID: 11400000, guid: e214f416a3c9ad948b13988bb7358d59, type: 2}
   - {fileID: 11400000, guid: af64733e55a166e4bb8d16d9734e025f, type: 2}
-  - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
@@ -31971,8 +31971,8 @@ MonoBehaviour:
   m_UpdateMethod: 2
   m_BlendUpdateMethod: 1
   m_DefaultBlend:
-    m_Style: 1
-    m_Time: 3
+    m_Style: 0
+    m_Time: 0
     m_CustomCurve:
       serializedVersion: 2
       m_Curve: []

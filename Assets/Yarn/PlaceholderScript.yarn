@@ -163,6 +163,7 @@ Traveller: ...... Hold on, I'm going to unlock the door.
 <<close Door>>
 <<sit Troll>>
 <<wait 2>>
+<<teleport TrollFront HiddenAnchor>>
 
 Traveller: It's... huge!
 Troll: Thank you, traveller. I am ever so relieved by your compassion.
@@ -212,8 +213,31 @@ position: 292,238
 title: Part03_Opt1_InviteShareFood
 position: 543,-333
 ---
-<i>The Traveller shares food with the troll</i>
-<i>The fire grows low and the wood runs out</i>
+Traveller: Yeah... sure.
+
+<<fade Screen out black 1>>
+<<wait 1>>
+<<setAmount WoodHolder half>>
+
+And so, the Troll and the Traveller shared stories of their adventures over a meal, their bodies warmed by the fire, and their spirits kindled by a sense of companionship.
+
+<<fade Screen in black 1>>
+<<wait 1>>
+
+Troll: ...and that is the reason I am no longer welcome at that particular alehouse.
+Traveller: Wow. I didn't really peg you as a revelrous type.
+Traveller: Give me a second, the fire is dimming.
+
+<<teleport Troll HiddenAnchor>>
+<<cut Camera InCabinWoodHolderCam>>
+<<wait 0.7>>
+<<setAmount WoodHolder none>>
+<<wait 1>>
+Traveller: Not good... we're going through wood faster than I thought.
+<<teleport Troll TrollDefaultAnchor>>
+<<cut Camera InCabinWindowCam>>
+Traveller: And the blizzard just won't stop.
+
 <<jump Part04_Opt1_FriendlyAdventure>>
 ===
 
@@ -252,8 +276,36 @@ position: 557,272
 title: Part04_Opt1_FriendlyAdventure
 position: 873,-329
 ---
-<i>The troll offers to collect more wood</i>
-<i>The Traveller and the troll are friendly, the troll agrees to help with his journey, they start a friendship</i>
+Troll: The cold is unrelenting, Traveller. We must seek more firewood.
+<<cut Camera InCabinDialogueCam>>
+<<eyes Traveller closed>>
+Traveller: ...
+Troll: This should take but a trice.
+<<eyes Traveller open>>
+Traveller: You're going out there?!
+Troll: Hah! Hah! Hah! Do you fear for me, Traveller?
+Traveller: Well, no! I mean, yes, I- just, are you sure?
+Troll: Do not worry. Now that some of my strength is regained, I should withstand the blizzard.
+Troll: On my way here, I passed by a grotto, sheltering a stockpile of dry wood. I do not know who left it there, although I suspect it was left by an adventurer not unlike ourselves.
+Traveller: That's... tremendous! Thank you!
+Troll: As you say, Traveller... don't mention it.
+
+<<fade Screen out black 2>>
+<<wait 2>>
+
+Stocked with firewood to keep them warm, the Troll and the Traveller endure the harsh blizzard.
+
+<<setTimeOfDay Effects 6>>
+<<setWeather Effects clear>>
+<<cut Camera OutsideCabinNearCam>>
+<<fade Screen in black 2>>
+<<wait 4>>
+<<open Door>>
+<<wait 3>>
+
+<i>Play happy ending sequence</i>
+<<jump Credits>>
+
 ===
 
 title: Part04_Opt2_TrollGone
@@ -277,3 +329,9 @@ position: 879,271
 <i>The traveler perishes inside the storm</i>
 ===
 
+title: Credits
+position: 1189,-8
+---
+<i>Play credits</i>
+<i>Jump to menu</i>
+===
