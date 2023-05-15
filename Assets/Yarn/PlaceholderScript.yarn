@@ -193,12 +193,79 @@ Traveller: (Should I share my food with him...?)
 title: Part02_Opt2_Ignore
 position: 280,1
 ---
-<i>Traveller does nothing</i>
-<i>The troll lets himself into the hut</i>
-<i>The traveller and the troll have a tense conversation</i>
--> <i>The Traveller shares his food with the troll</i>
+<<eyes Traveller closed>>
+Traveller: (I really shouldn't let him in.)
+Traveller: (Maybe if I wait, he'll go someplace else.)
+<<forced Door false>>
+<<wait 2>>
+<<shiver Traveller false>>
+<<eyes Traveller open>>
+Traveller: (Is he... gone?)
+<<wait 1>>
+
+<<teleport TrollFront AtDoorAnchor>>
+<<darken TrollFront>>
+<<agitate TrollFront>>
+<<open Door>>
+* CRASH *
+<<fade Screen out white 0.1>>
+<<wait 0.1>>
+<<cut Camera InCabinDoorCam>>
+<<fade Screen in white 0.1>>
+<<wait 1>>
+
+Troll: Unbelievable!
+<<shiver Traveller true>>
+Troll: I have seen humans stoop to hideous lows, but at least all had the decency to acknowledge my presence!
+
+<<dolly Camera InCabinDialogueCam>>
+<<wait 4>>
+<<teleport Troll AtDoorAnchor>>
+<<slide Troll TrollDefaultAnchor 3>>
+<<wait 3>>
+<<close Door>>
+<<sit Troll>>
+<<wait 2>>
+<<teleport TrollFront HiddenAnchor>>
+
+Troll: You would deny me the most basic of courtesies in my time of desperate need?
+Traveller: I... I...
+Troll: Tell me, Traveller. Are these your personal lodgings?
+<<shiver Traveller false>>
+Traveller: I-it doesn't matter. I found it first, and I have a right to protect myself.
+Troll: Ah, I see. The right to protect oneself, Traveller?
+Traveller: Y-yeah. It's a wolf eat wolf world out there.
+Troll: Bah! Hah! You see yourself a wolf, Traveller? Now that, I find amusing.
+Troll: It is true that, faced with harsh circumstances, the noble wolf may turn against others of its own kind.
+Troll: Then tell me this Traveller - are your present circumstances so dire, so threatening, that you would eat your own pup to survive?
+Troll: Because what I see is a rather well fed tabby resting by a fireplace!
+Traveller: Look, it's a human expression- hey!
+Traveller: Who's a "well-fed tabby"?!
+<<wait 2>>
+Traveller: Look, Traveller. I wish you no harm. What matters to me now is that we are both safe from the blizzard.
+Traveller: And so, I apologise for my outburst.
+<<cut Camera InCabinWindowCam>>
+Traveller: Who knows how long we might share this cabin for?
+<<fade Screen out black 2>>
+<<wait 2>>
+
+Traveller: (It's been hours... I'm starving.)
+Traveller: (This is the last of my bread. Hunting or foraging is out of the question right now...)
+
+<<eyes Traveller halfClosed>>
+<<fade Screen in black 2>>
+<<wait 2>>
+
+Troll: Traveller...
+Traveller: (Uh oh.)
+Troll: I see you are better equipped than I thought. You were wise to pack food that wouldn't perish easily.
+Troll: I have been wandering for days, and my health has faltered so...
+Troll: Would you kindly shar some of your food with me?
+
+Traveller: (Should I share my food with him...?)
+-> <i>Share food</i>
 	<<jump Part03_Opt3_IgnoreShareFood>>
--> <i>The Traveller does not share food with the troll</i>
+-> <i>Do not share food</i>
 	<<jump Part03_Opt4_IgnoreRefuseFood>>
 ===
 
@@ -244,8 +311,32 @@ Traveller: And the blizzard just won't stop.
 title: Part03_Opt2_InviteRefuseFood
 position: 546,-193
 ---
-<i>The Traveller does not share food with the troll</i>
-<i>The fire grows low and the wood runs out</i>
+Traveller: No. I need the food.
+Troll: I have no intention of taking it by force.
+<<eyes Traveller halfClosed>>
+Traveller: That's awfully kind of you.
+...
+<<fade Screen out black 3>>
+<<wait 3>>
+<<setAmount WoodHolder half>>
+<<eyes Traveller closed>>
+<<wait 1>>
+<<fade Screen in black 3>>
+<<wait 3>>
+<<eyes Traveller halfClosed>>
+<<wait 3>>
+<<teleport Troll HiddenAnchor>>
+<<cut Camera InCabinWoodHolderCam>>
+<<wait 0.7>>
+Traveller: (It's dimming...)
+<<wait 0.7>>
+<<setAmount WoodHolder none>>
+<<wait 1>>
+Traveller: (Not good... I'm going through wood faster than I thought.)
+<<teleport Troll TrollDefaultAnchor>>
+<<cut Camera InCabinWindowCam>>
+Traveller: (And the blizzard just won't stop.)
+
 <<jump Part04_Opt2_TrollGone>>
 ===
 
@@ -311,8 +402,64 @@ Stocked with firewood to keep them warm, the Troll and the Traveller endure the 
 title: Part04_Opt2_TrollGone
 position: 870,-124
 ---
-<i>The troll offers to collect more wood</i>
-<i>The Traveller survives the night and in the morning the troll is gone</i>
+Troll: The cold is unrelenting, Traveller. We must seek more firewood.
+<<cut Camera InCabinDialogueCam>>
+<<eyes Traveller closed>>
+Traveller: ...
+Troll: I will go and collect more.
+<<eyes Traveller open>>
+Traveller: You're going out in that blizzard?!
+Troll: Oh? Are you concerned for me Traveller?
+Troll: In any case, my fur has not betrayed me yet. I have wandered for so long, I should withstand a while longer.
+Troll: Farewell.
+<<fade Screen out black 1>>
+<<wait 1>>
+<<open Door>>
+<<wait 3>>
+<<close Door>>
+* SLAM *
+<<teleport Troll HiddenAnchor>>
+<<fade Screen in black 1>>
+<<wait 2>>
+Traveller: He's gone...
+Traveller: I hope he makes it.
+Traveller: I guess all I can do is wait.
+<<fade Screen out black 2>>
+<<wait 2.5>>
+<<eyes Traveller closed>>
+<<setTimeOfDay Effects 6>>
+<<setWeather Effects LightSnow>>
+<<setAmount WoodHolder full>>
+<<fade Screen out black 2>>
+<<wait 2.5>>
+<<eyes Traveller halfClosed>>
+<<wait 0.5>>
+Traveller: I fell asleep...
+<<eyes Traveller open>>
+<<cut Camera InCabinWindowCam>>
+Traveller: ?
+Traveller: I slept through the entire night?
+<<teleport Traveller HiddenAnchor>>
+<<teleport TravellerFront InCabinCentreAnchor>>
+<<cut Camera InCabinAloneCam>>
+<<stand TravellerFront>>
+<<wait 1>>
+Traveller: The firewood...
+<<teleport TravellerFront HiddenAnchor>>
+<<cut Camera InCabinWoodHolderCam>>
+Traveller: He made it back!
+Traveller: But where is he now?
+<<fade Screen out white 4>>
+<<wait 5>>
+<<cut Camera OutsideCabinNearCam>>
+<<fade Screen in white 2>>
+<<wait 4>>
+<<open Door>>
+<<wait 3>>
+<<walk TravellerFront>>
+
+<i>Play ending 2 sequence</i>
+<<jump Credits>>
 ===
 
 title: Part04_Opt3_TrollBlock
