@@ -191,7 +191,7 @@ Traveller: (Should I share my food with him...?)
 ===
 
 title: Part02_Opt2_Ignore
-position: 280,1
+position: 279,1
 ---
 <<eyes Traveller closed>>
 Traveller: (I really shouldn't let him in.)
@@ -242,12 +242,13 @@ Troll: Because what I see is a rather well fed tabby resting by a fireplace!
 Traveller: Look, it's a human expression- hey!
 Traveller: Who's a "well-fed tabby"?!
 <<wait 2>>
-Traveller: Look, Traveller. I wish you no harm. What matters to me now is that we are both safe from the blizzard.
-Traveller: And so, I apologise for my outburst.
+Troll: Look, Traveller. I wish you no harm. What matters to me now is that we are both safe from the blizzard.
+Troll: And so, I apologise for my outburst.
 <<cut Camera InCabinWindowCam>>
-Traveller: Who knows how long we might share this cabin for?
+Troll: Who knows how long we might share this cabin for?
 <<fade Screen out black 2>>
 <<wait 2>>
+<<cut Camera InCabinDialogueCam>>
 
 Traveller: (It's been hours... I'm starving.)
 Traveller: (This is the last of my bread. Hunting or foraging is out of the question right now...)
@@ -260,7 +261,7 @@ Troll: Traveller...
 Traveller: (Uh oh.)
 Troll: I see you are better equipped than I thought. You were wise to pack food that wouldn't perish easily.
 Troll: I have been wandering for days, and my health has faltered so...
-Troll: Would you kindly shar some of your food with me?
+Troll: Would you kindly share some of your food with me?
 
 Traveller: (Should I share my food with him...?)
 -> <i>Share food</i>
@@ -430,7 +431,7 @@ Traveller: I guess all I can do is wait.
 <<setTimeOfDay Effects 6>>
 <<setWeather Effects LightSnow>>
 <<setAmount WoodHolder full>>
-<<fade Screen out black 2>>
+<<fade Screen in black 2>>
 <<wait 2.5>>
 <<eyes Traveller halfClosed>>
 <<wait 0.5>>

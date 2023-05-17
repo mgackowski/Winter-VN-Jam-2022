@@ -22790,21 +22790,23 @@ MonoBehaviour:
   dialogueRunner: {fileID: 735365876}
   autosaveEnabled: 0
   loadOnAwake: 1
-  currentPersistentSave: {fileID: 11400000, guid: 8dc00fa4c2f297b43ae9c540061bf638,
+  currentPersistentSave: {fileID: 11400000, guid: 648db06db5e8e9942b874000db43f832,
     type: 2}
   allPersistentSaves:
   - {fileID: 0}
   - {fileID: 11400000, guid: 648db06db5e8e9942b874000db43f832, type: 2}
   - {fileID: 11400000, guid: d76ca21d457070c4292f710b96690ef9, type: 2}
+  - {fileID: 11400000, guid: bf243660820ab374e9fb2e3e1f23e310, type: 2}
+  - {fileID: 11400000, guid: 27d9c0b09c9242a4da5b7957921e0411, type: 2}
   - {fileID: 11400000, guid: 8dc00fa4c2f297b43ae9c540061bf638, type: 2}
-  - {fileID: 11400000, guid: e214f416a3c9ad948b13988bb7358d59, type: 2}
   - {fileID: 11400000, guid: af64733e55a166e4bb8d16d9734e025f, type: 2}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 11400000, guid: 4591d00d24276f044bab8df6c358acb0, type: 2}
+  - {fileID: 11400000, guid: f1153f5f62e992b4ba8797111af2e06f, type: 2}
+  - {fileID: 11400000, guid: c3ab2c66bbd1e864e9336cd010da40e3, type: 2}
+  - {fileID: 11400000, guid: e214f416a3c9ad948b13988bb7358d59, type: 2}
+  - {fileID: 11400000, guid: fd76a14d77502f340897c69f9766214d, type: 2}
+  - {fileID: 11400000, guid: 02395f0f96de75e4ebe16f18b0bbc299, type: 2}
+  - {fileID: 11400000, guid: 92d7e73f932278b44b0d80af9c15d11a, type: 2}
 --- !u!1 &882038985
 GameObject:
   m_ObjectHideFlags: 0
