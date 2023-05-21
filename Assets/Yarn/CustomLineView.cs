@@ -4,6 +4,7 @@ using System.Linq;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using static UnityEngine.InputSystem.InputAction;
 
 namespace Yarn.Unity
 {
@@ -14,7 +15,6 @@ namespace Yarn.Unity
     /// </summary>
     public class CustomLineView : DialogueViewBase
     {
-        //CUSTOM VARIABLES
         [SerializeField] string[] travelerNames = {"Traveler"};
         [SerializeField] string[] trollNames = { "Troll" };
         [SerializeField] TravelerBack travelerActor;
@@ -434,7 +434,6 @@ namespace Yarn.Unity
                 yield return new WaitForSeconds(holdTime);
             }
 
-            //CUSTOM BIT
             if (travelerActor != null && travelerNames.Contains<string>(dialogueLine.CharacterName))
             {
                 travelerActor.Talk(false);
@@ -462,6 +461,8 @@ namespace Yarn.Unity
         /// <inheritdoc/>
         public override void UserRequestedViewAdvancement()
         {
+            Debug.Log("UserRequestedViewAdvancement()");
+
             // We received a request to advance the view. If we're in the middle of
             // an animation, skip to the end of it. If we're not current in an
             // animation, interrupt the line so we can skip to the next one.
@@ -470,6 +471,15 @@ namespace Yarn.Unity
             if (currentLine == null)
             {
                 return;
+            }
+
+            if (travelerActor != null && travelerNames.Contains<string>(currentLine.CharacterName))
+            {
+                travelerActor.Talk(false);
+            }
+            if (trollActor != null && trollNames.Contains<string>(currentLine.CharacterName))
+            {
+                trollActor.Talk(false);
             }
 
             // we may want to change this later so the interrupted
@@ -481,33 +491,20 @@ namespace Yarn.Unity
                 // Stop the current animation, and skip to the end of whatever
                 // started it.
                 currentStopToken.Interrupt();
+                return;
             }
-
-            //CUSTOM BIT
-            if (travelerActor != null && travelerNames.Contains<string>(currentLine.CharacterName))
-            {
-                travelerActor.Talk(false);
-            }
-            if (trollActor != null && trollNames.Contains<string>(currentLine.CharacterName))
-            {
-                trollActor.Talk(false);
-            }
-
 
             // No animation is now running. Signal that we want to
             // interrupt the line instead.
             requestInterrupt?.Invoke();
         }
 
-        /// <summary>
-        /// Called when the <see cref="continueButton"/> is clicked.
-        /// </summary>
-        public void OnContinueClicked()
+        public void OnContinueClicked(CallbackContext ctx)
         {
-            // When the Continue button is clicked, we'll do the same thing as
-            // if we'd received a signal from any other part of the game (for
-            // example, if a DialogueAdvanceInput had signalled us.)
-            UserRequestedViewAdvancement();
+            if(ctx.phase == UnityEngine.InputSystem.InputActionPhase.Performed)
+            {
+                UserRequestedViewAdvancement();
+            }
         }
     }
 }
