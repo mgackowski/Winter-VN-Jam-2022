@@ -14964,42 +14964,42 @@ PrefabInstance:
     - target: {fileID: 3292657645895612461, guid: 7f29e5f7ffdea4a6793cefb278b61f0c,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3292657645895612462, guid: 7f29e5f7ffdea4a6793cefb278b61f0c,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 100.22
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3292657647476544605, guid: 7f29e5f7ffdea4a6793cefb278b61f0c,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3292657647476544605, guid: 7f29e5f7ffdea4a6793cefb278b61f0c,
         type: 3}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3292657647476544605, guid: 7f29e5f7ffdea4a6793cefb278b61f0c,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 1480.0001
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3292657647476544605, guid: 7f29e5f7ffdea4a6793cefb278b61f0c,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 60.22
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3292657647476544605, guid: 7f29e5f7ffdea4a6793cefb278b61f0c,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 760.00006
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3292657647476544605, guid: 7f29e5f7ffdea4a6793cefb278b61f0c,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -50.11
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3579681405068720530, guid: 7f29e5f7ffdea4a6793cefb278b61f0c,
         type: 3}
@@ -24525,7 +24525,7 @@ MonoBehaviour:
   dialogueRunner: {fileID: 735365876}
   autosaveEnabled: 0
   loadOnAwake: 1
-  currentPersistentSave: {fileID: 11400000, guid: 8dc00fa4c2f297b43ae9c540061bf638,
+  currentPersistentSave: {fileID: 11400000, guid: 648db06db5e8e9942b874000db43f832,
     type: 2}
   allPersistentSaves:
   - {fileID: 0}
@@ -33585,6 +33585,8 @@ MonoBehaviour:
   - '"Thunderous voice"'
   travelerActor: {fileID: 1921841856255578100}
   trollActor: {fileID: 419420654}
+  travellerColour: {r: 1, g: 0.8911466, b: 0.6462264, a: 1}
+  trollColour: {r: 0.5707547, g: 0.8103336, b: 1, a: 1}
   canvasGroup: {fileID: 1605706380}
   useFadeEffect: 1
   fadeInTime: 0.25

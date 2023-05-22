@@ -19,6 +19,8 @@ namespace Yarn.Unity
         [SerializeField] string[] trollNames = { "Troll" };
         [SerializeField] TravelerBack travelerActor;
         [SerializeField] TrollProfile trollActor;
+        [SerializeField] Color travellerColour;
+        [SerializeField] Color trollColour;
 
         /// <summary>
         /// The canvas group that contains the UI elements used by this Line
@@ -307,13 +309,21 @@ namespace Yarn.Unity
             // Begin running the line as a coroutine.
             StartCoroutine(RunLineInternal(dialogueLine, onDialogueLineFinished));
             
-            //CUSTOM BIT
             if(travelerActor != null && travelerNames.Contains<string>(dialogueLine.CharacterName)) {
                 travelerActor.Talk(true);
+                lineText.color = travellerColour;
+                continueButton.GetComponent<Image>().color = travellerColour;
             }
-            if (trollActor != null && trollNames.Contains<string>(dialogueLine.CharacterName))
+            else if (trollActor != null && trollNames.Contains<string>(dialogueLine.CharacterName))
             {
                 trollActor.Talk(true);
+                lineText.color = trollColour;
+                continueButton.GetComponent<Image>().color = trollColour;
+            }
+            else
+            {
+                lineText.color = Color.white;
+                continueButton.GetComponent<Image>().color = Color.white;
             }
 
         }
