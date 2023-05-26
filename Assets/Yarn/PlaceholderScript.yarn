@@ -49,12 +49,17 @@ Traveller: ...?
 Traveller: A cabin...?
 <<fade Screen out white 3>>
 <<wait 3>>
-
-(A PoV cutscene of entering the cabin would play here)
-
+<<fade Screen in white 1>>
+<<PlayCutscene CutsceneCam EnterCabin>>
+<<wait 5>>
+<<open Door>>
+<<wait 10>>
+<<fade Screen out white 0.2>>
+<<wait 0.2>>
+<<fade Screen in white 0.2>>
 <<teleport TravellerFront InCabinCornerAnchor>>
 <<cut Camera InCabinAloneCam>>
-<<fade Screen in white 1>>
+<<close Door>>
 <<wait 1>>
 <<slide TravellerFront InCabinCentreAnchor 3>>
 <<walk TravellerFront>>
