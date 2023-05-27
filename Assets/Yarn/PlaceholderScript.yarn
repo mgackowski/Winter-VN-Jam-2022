@@ -392,15 +392,26 @@ Troll: As you say, Traveller... don't mention it.
 
 Stocked with firewood to keep them warm, the Troll and the Traveller endure the harsh blizzard.
 
+<<open Door>>
+<<wait 3>>
+<<teleport Troll HiddenAnchor>>
+<<teleport Traveller HiddenAnchor>>
+<<teleport TrollFront EpilogueAnchorTroll>>
+<<teleport TravellerFront TravellerDefaultAnchor>>
+<<idle TrollFront>>
+<<walk TravellerFront>>
+<<brighten TrollFront>>
 <<setTimeOfDay Effects 6>>
 <<setWeather Effects clear>>
 <<cut Camera OutsideCabinNearCam>>
 <<fade Screen in black 2>>
+<<wait 2>>
+<<slide TravellerFront EpilogueAnchorTraveller 4>>
 <<wait 4>>
-<<open Door>>
+<<stand TravellerFront>>
 <<wait 3>>
+<<fade Screen out black 2>>
 
-<i>Play happy ending sequence</i>
 <<jump Credits>>
 
 ===
