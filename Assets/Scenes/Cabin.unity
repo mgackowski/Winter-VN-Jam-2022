@@ -22482,7 +22482,7 @@ MonoBehaviour:
   dialogueRunner: {fileID: 3579681405509339971}
   autosaveEnabled: 0
   loadOnAwake: 1
-  currentPersistentSave: {fileID: 11400000, guid: 648db06db5e8e9942b874000db43f832,
+  currentPersistentSave: {fileID: 11400000, guid: 8dc00fa4c2f297b43ae9c540061bf638,
     type: 2}
   allPersistentSaves:
   - {fileID: 0}
@@ -39257,6 +39257,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4415329420462963977, guid: 4aa4132f5e0b0244e8f51ed1a6da7cb6,
+        type: 3}
+      propertyPath: m_CullingMode
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4641016534519476314, guid: 4aa4132f5e0b0244e8f51ed1a6da7cb6,
         type: 3}
       propertyPath: m_Name
@@ -39639,7 +39644,7 @@ PrefabInstance:
     - target: {fileID: 221987904492853170, guid: 52ac088918f87c04a9b5ec06a05ea270,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 959.9999
+      value: 959.9998
       objectReference: {fileID: 0}
     - target: {fileID: 221987904492853170, guid: 52ac088918f87c04a9b5ec06a05ea270,
         type: 3}
