@@ -9,9 +9,19 @@ ScriptedImporter:
   assetBundleVariant: 
   script: {fileID: 11500000, guid: 053561912b1654d80a424bb0696a74ae, type: 3}
   sourceScripts:
+  - {fileID: 6391573757903218779, guid: 87f2b8172ce8ab5468d566d3c9d93fa9, type: 3}
   - {fileID: 6391573757903218779, guid: 9514cd61ea0e7a24883ccf1fe100e000, type: 3}
   compileErrors: []
-  serializedDeclarations: []
+  serializedDeclarations:
+  - name: $quality
+    typeName: String
+    defaultValueBool: 0
+    defaultValueNumber: 0
+    defaultValueString: 
+    description: Implicitly declared in TitleMenuScript.yarn, node InitVariables
+    isImplicit: 1
+    sourceYarnAsset: {fileID: 6391573757903218779, guid: 87f2b8172ce8ab5468d566d3c9d93fa9,
+      type: 3}
   defaultLanguage: en-GB
   languagesToSourceAssets: []
   useAddressableAssets: 0

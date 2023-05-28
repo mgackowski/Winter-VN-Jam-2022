@@ -1,0 +1,51 @@
+title: MainMenuInit
+position: -0,0
+---
+<<if $quality == "">>
+	<<set $quality to "High">>
+<<endif>>
+
+<<setTimeOfDay Effects 17>>
+<<setWeather Effects LightSnow>>
+<<teleport Troll HiddenAnchor>>
+<<teleport TrollFront HiddenAnchor>>
+<<teleport Traveller HiddenAnchor>>
+<<teleport TravellerFront HiddenAnchor>>
+<<close Door>>
+<<forced Door false>>
+<<burning Fireplace false>>
+<<setAmount WoodHolder full>>
+<<cut Camera OutsideMainMenuCam>>
+
+<<jump MainMenu>>
+===
+
+title: MainMenu
+position: -0,0
+---
+-> Start
+	<<jump Part01>>
+-> Options
+	<<jump Options>>
+-> Credits
+	<<rollCredits Credits 15>>
+	<<wait 15>>
+	<<jump MainMenu>>
+===
+
+title: Options
+position: -0,0
+---
+-> Visual quality - {$quality}
+	<<if $quality == "High">>
+    	<<set $quality to "Not as high">>
+		<<setQuality Balanced>>
+		<<jump Options>>
+	<<else>>
+    	<<set $quality to "High">>
+		<<setQuality High>>
+		<<jump Options>>
+	<<endif>>
+-> Back to menu
+	<<jump MainMenu>>
+===

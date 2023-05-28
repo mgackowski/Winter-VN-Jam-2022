@@ -524,4 +524,7 @@ position: 1189,-8
 <<rollCredits Credits 30>>
 <<wait 30>>
 <<fade Screen out black 2>>
+<<wait 3>>
+
+<<jump MainMenuInit>>
 ===
