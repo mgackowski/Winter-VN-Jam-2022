@@ -11,6 +11,7 @@ position: -0,0
 <<teleport TrollFront HiddenAnchor>>
 <<teleport Traveller HiddenAnchor>>
 <<teleport TravellerFront HiddenAnchor>>
+<<teleport Chair ChairDefaultAnchor>>
 <<close Door>>
 <<forced Door false>>
 <<burning Fireplace false>>

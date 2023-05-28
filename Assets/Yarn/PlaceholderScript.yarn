@@ -13,6 +13,7 @@ title: Part01
 <<teleport TrollFront HiddenAnchor>>
 <<teleport Traveller HiddenAnchor>>
 <<teleport TravellerFront HiddenAnchor>>
+<<teleport Chair ChairDefaultAnchor>>
 <<close Door>>
 <<forced Door false>>
 <<burning Fireplace false>>
@@ -135,7 +136,7 @@ Traveller: (Is this a good idea...?)
 	<<jump Part02_Opt1_Invite>>
 -> <i>Do nothing
 	<<jump Part02_Opt2_Ignore>>
--> <i>Refuse (STILL IN DEVELOPMENT)
+-> <i>Refuse
 	<<jump Part02_Opt3_Refuse>>
 ===
 
@@ -279,8 +280,33 @@ Traveller: (Should I share my food with him...?)
 title: Part02_Opt3_Refuse
 position: 292,238
 ---
-<i>Traveller refuses the troll in</i>
-<i>The traveller remains alone in the hut with the troll's whareabouts unknown</i>
+Traveller: ...
+Traveller: Just... go away, okay?
+<<forced Door false>>
+<<wait 1>>
+Troll: ... Traveller?
+<<shiver Traveller false>>
+Traveller: You heard me. It's occupied. Go find some other place!
+Troll: There is no other place for miles, Traveller.
+Traveller: I'm sure you'll do just fine!
+<<wait 3>>
+<<eyes Traveller halfClosed>>
+<<wait 0.5>>
+Traveller: (Is he gone?)
+<<wait 1>>
+<<eyes Traveller closed>>
+Traveller: Oh, thank God.
+Traveller: Not a fan of moral dilemmas.
+<<eyes Traveller open>>
+<<cut Camera InCabinBlockingDoorCam>>
+Traveller: I should probably put up a barricade in case he decides to come back hungry.
+<<wait 0.7>>
+<<teleport Chair ChairBarricadeAnchor>>
+<<wait 0.7>>
+Traveller: That'll do.
+<<cut Camera InCabinDialogueCam>>
+Traveller: Now let's just hope the wind dies down. I can't stay here forever.
+
 <<jump Part03_Opt5_Refuse>>
 ===
 
@@ -439,8 +465,35 @@ Traveller: Hey...
 title: Part03_Opt5_Refuse
 position: 557,272
 ---
-<i>The traveller eats, worries about his journey and becomes fearful and bitter</i>
-<i>The fire grows low and the wood runs out</i>
+Traveller: At least I still have some food left.
+<<fade Screen out black 2>>
+<<wait 2>>
+<<eyes Traveller halfClosed>>
+<<fade Screen in black 2>>
+<<wait 2>>
+Traveller: This entire journey was a mistake.
+Traveller: I am never volunteering for anything again.
+Traveller: When's the last time ANYONE did ANYTHING for me?
+<<shiver Traveller true>>
+Traveller: Pretty sure I was THIS close to becoming troll food today.
+Traveller: Oh, right, the fire.
+<<cut Camera InCabinWoodHolderCam>>
+<<wait 0.7>>
+Traveller: It's getting really dim.
+<<wait 0.7>>
+<<setAmount WoodHolder none>>
+<<shiver Traveller false>>
+<<wait 1>>
+Traveller: That's not good. I'm going through wood faster than I thought.
+Traveller: How long have I been here? How many hours?
+Traveller: ... How many days? MONTHS?
+Traveller: ...
+Traveller: Well, no. It's still dark. So maybe not months.
+<<cut Camera InCabinWindowCam>>
+Traveller: This blizzard...
+Traveller: Going out there is out of the question.
+<<cut Camera InCabinDialogueCam>>
+
 <<jump Part04_Opt4_TravellerOut>>
 ===
 
@@ -608,8 +661,46 @@ Traveller: Help..! Anybody..?
 title: Part04_Opt4_TravellerOut
 position: 879,271
 ---
-<i>The traveler must choose to go out into the storm for more wood or freeze</i>
-<i>The traveler perishes inside the storm</i>
+Traveller: Still... I'm out of firewood...
+<<fade Screen out black 2>>
+<<wait 2>>
+<<eyes Traveller closed>>
+<<shiver Traveller true>>
+<<wait 0.5>>
+<<burning Fireplace false>>
+<<fade Screen in black 1.5>>
+<<wait 2>>
+Traveller: I either go...
+Traveller: Or freeze...
+Traveller: Or go... and freeze...
+<<eyes Traveller open>>
+<<wait 1>>
+Traveller: Get a hold of yourself...
+Traveller: It's like it's always been...
+<<eyes Traveller close>>
+Traveller: You can only... count... on yourself.
+<<wait 1>>
+<<fade Screen out black 2>>
+<<wait 2>>
+
+<<open Door>>
+<<teleport Chair ChairDefaultAnchor>>
+<<teleport Traveller HiddenAnchor>>
+<<teleport TravellerFront TravellerDefaultAnchor>>
+<<wait 3>>
+<<walk TravellerFront>>
+<<cut Camera OutsideCabinNearCam>>
+<<fade Screen in black 2>>
+<<wait 2>>
+<<slide TravellerFront EpilogueAnchorTraveller 4>>
+<<wait 4>>
+<<tremble TravellerFront>>
+<<wait 3>>
+<<fade Screen out black 2>>
+<<wait 2>>
+<<teleport TravellerFront HiddenAnchor>>
+
+<<jump Credits>>
 ===
 
 title: Credits
