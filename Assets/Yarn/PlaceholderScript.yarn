@@ -133,9 +133,9 @@ Traveller: (Is this a good idea...?)
 
 -> <i>Invite troll
 	<<jump Part02_Opt1_Invite>>
--> <i>Do nothing
+-> <i>Do nothing (STILL IN DEVELOPMENT)
 	<<jump Part02_Opt2_Ignore>>
--> <i>Refuse
+-> <i>Refuse (STILL IN DEVELOPMENT)
 	<<jump Part02_Opt3_Refuse>>
 ===
 
@@ -474,16 +474,30 @@ Traveller: The firewood...
 <<cut Camera InCabinWoodHolderCam>>
 Traveller: He made it back!
 Traveller: But where is he now?
-<<fade Screen out white 4>>
-<<wait 5>>
-<<cut Camera OutsideCabinNearCam>>
-<<fade Screen in white 2>>
-<<wait 4>>
+
+<<fade Screen out black 2>>
+<<wait 2>>
+
 <<open Door>>
+<<teleport Troll HiddenAnchor>>
+<<teleport Traveller HiddenAnchor>>
+<<teleport TravellerFront TravellerDefaultAnchor>>
 <<wait 3>>
 <<walk TravellerFront>>
+<<setTimeOfDay Effects 6>>
+<<cut Camera OutsideCabinNearCam>>
+<<fade Screen in black 2>>
+<<wait 2>>
+<<slide TravellerFront EpilogueAnchorTraveller 4>>
+<<wait 4>>
+<<stand TravellerFront>>
+<<wait 3>>
+<<fade Screen out black 2>>
+<<wait 2>>
+<<teleport TravellerFront CutsceneCreditsTravellerAnchor>>
+<<walk TravellerFront>>
+<<setTimeOfDay Effects 16>>
 
-<i>Play ending 2 sequence</i>
 <<jump Credits>>
 ===
 

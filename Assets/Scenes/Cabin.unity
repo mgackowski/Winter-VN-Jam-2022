@@ -31763,7 +31763,7 @@ MonoBehaviour:
   dialogueRunner: {fileID: 3579681405509339971}
   autosaveEnabled: 0
   loadOnAwake: 1
-  currentPersistentSave: {fileID: 11400000, guid: e214f416a3c9ad948b13988bb7358d59,
+  currentPersistentSave: {fileID: 11400000, guid: fd76a14d77502f340897c69f9766214d,
     type: 2}
   allPersistentSaves:
   - {fileID: 0}
