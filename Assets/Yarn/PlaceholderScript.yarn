@@ -50,7 +50,8 @@ Traveller: A cabin...?
 <<fade Screen out white 3>>
 <<wait 3>>
 <<fade Screen in white 1>>
-<<PlayCutscene CutsceneCam EnterCabin>>
+<<shake CutsceneCam true>>
+<<playCutscene CutsceneCam EnterCabin>>
 <<wait 5>>
 <<open Door>>
 <<wait 10>>
@@ -391,6 +392,7 @@ Troll: As you say, Traveller... don't mention it.
 <<wait 2>>
 
 Stocked with firewood to keep them warm, the Troll and the Traveller endure the harsh blizzard.
+They venture forth, eager to start their next adventure together.
 
 <<open Door>>
 <<wait 3>>
@@ -411,6 +413,12 @@ Stocked with firewood to keep them warm, the Troll and the Traveller endure the 
 <<stand TravellerFront>>
 <<wait 3>>
 <<fade Screen out black 2>>
+<<wait 2>>
+<<teleport TravellerFront CutsceneCreditsTravellerAnchor>>
+<<walk TravellerFront>>
+<<agitate TrollFront>>
+<<teleport TrollFront CutsceneCreditsTrollAnchor>>
+<<setTimeOfDay Effects 16>>
 
 <<jump Credits>>
 
@@ -496,6 +504,10 @@ position: 879,271
 title: Credits
 position: 1189,-8
 ---
-<i>Play credits</i>
-<i>Jump to menu</i>
+<<playCutscene CutsceneCam Credits>>
+<<shake CutsceneCam false>>
+<<fade Screen in black 2>>
+<<rollCredits Credits 30>>
+<<wait 30>>
+<<fade Screen out black 2>>
 ===

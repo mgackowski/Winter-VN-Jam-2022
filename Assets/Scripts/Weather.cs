@@ -10,6 +10,8 @@ public class Weather : MonoBehaviour, IStateful
     [SerializeField] GameObject dustStorm;
     [SerializeField] float heavyFogLevel = 0.12f;
     [SerializeField] float lightFogLevel = 0.005f;
+    [SerializeField] Color brightFogColor;
+    [SerializeField] Color darkFogColor;
 
     string currentWeather = "heavySnow";
     float currentTime = 23f;
@@ -50,13 +52,16 @@ public class Weather : MonoBehaviour, IStateful
     {
         //TODO: Current solution uses a hardwired y component   
         
-        sunlight.transform.rotation = Quaternion.Euler((hourOfDay - 6f) * 15f, -6.68f, 0f);
+        sunlight.transform.rotation = Quaternion.Euler((hourOfDay - 6f) * 15f, -30f, 0f);
 
-        //Vector3 currentRotation = sunlight.transform.eulerAngles;
-        //currentRotation.x = (hourOfDay - 6f) * 15f;
-        //sunlight.transform.eulerAngles = currentRotation;
-        // 6am is 0 degrees
-        // 12pm is 90 degrees
+        if(hourOfDay >= 4 && hourOfDay < 18)
+        {
+            RenderSettings.fogColor = brightFogColor;
+        }
+        else
+        {
+            RenderSettings.fogColor = darkFogColor;
+        }
 
         currentTime = hourOfDay;
     }

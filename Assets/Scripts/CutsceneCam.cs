@@ -15,7 +15,7 @@ public class CutsceneCam : MonoBehaviour
         anim = GetComponent<Animator>();
     }
 
-    [YarnCommand("PlayCutscene")]
+    [YarnCommand("playCutscene")]
     public void PlayCutscene(string name)
     {
         foreach (CinemachineVirtualCamera sceneCam in SceneInfo.cameras)
@@ -27,4 +27,11 @@ public class CutsceneCam : MonoBehaviour
         anim.ResetTrigger(name);
         anim.SetTrigger(name);
     }
+
+    [YarnCommand("shake")]
+    public void SetShake(bool enabled)
+    {
+        cam.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().enabled = enabled;
+    }
+
 }
