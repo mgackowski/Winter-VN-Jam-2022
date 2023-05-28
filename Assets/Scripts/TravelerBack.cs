@@ -53,8 +53,8 @@ public class TravelerBack : MonoBehaviour, IStateful
     public void SetState(Dictionary<string, string> keyValuePairs)
     {
         anim.SetBool("Shivering", bool.Parse(keyValuePairs["shivering"]));
-        anim.SetBool("Shivering", bool.Parse(keyValuePairs["eyesClosed"]));
-        anim.SetBool("Shivering", bool.Parse(keyValuePairs["eyesHalfClosed"]));
+        anim.SetBool("EyesClosed", bool.Parse(keyValuePairs["eyesClosed"]));
+        anim.SetBool("EyesHalfClosed", bool.Parse(keyValuePairs["eyesHalfClosed"]));
     }
 
     public string GetObjectName()

@@ -133,7 +133,7 @@ Traveller: (Is this a good idea...?)
 
 -> <i>Invite troll
 	<<jump Part02_Opt1_Invite>>
--> <i>Do nothing (STILL IN DEVELOPMENT)
+-> <i>Do nothing
 	<<jump Part02_Opt2_Ignore>>
 -> <i>Refuse (STILL IN DEVELOPMENT)
 	<<jump Part02_Opt3_Refuse>>
@@ -350,16 +350,89 @@ Traveller: (And the blizzard just won't stop.)
 title: Part03_Opt3_IgnoreShareFood
 position: 545,-51
 ---
-<i>The Traveller shares his food with the troll</i>
-<i>The fire grows low and the wood runs out</i>
+<<eyes Traveller closed>>
+<<wait 0.5>>
+Traveller: I guess you've been through a lot too, huh.
+<<eyes Traveller open>>
+Traveller: Yeah, you can have half of this. I guess it's not much, though.
+Troll: Thank you, Traveller. Whatever you can spare is enough.
+
+<<fade Screen out black 1>>
+<<wait 1>>
+<<setAmount WoodHolder half>>
+
+The Troll and the Traveller share a silent moment over a paltry meal. Though their meeting was tense, the warm fire keeps them from losing hope.
+
+<<eyes Traveller halfClosed>>
+<<fade Screen in black 1>>
+<<wait 3>>
+
+<<teleport Troll HiddenAnchor>>
+<<cut Camera InCabinWoodHolderCam>>
+<<wait 0.7>>
+Traveller: (It's dimming...)
+<<wait 0.7>>
+<<setAmount WoodHolder none>>
+<<wait 1>>
+Traveller: (Not good... I'm going through wood faster than I thought.)
+<<teleport Troll TrollDefaultAnchor>>
+<<cut Camera InCabinWindowCam>>
+Traveller: (And the blizzard just won't stop.)
+
 <<jump Part04_Opt2_TrollGone>>
 ===
 
 title: Part03_Opt4_IgnoreRefuseFood
 position: 550,112
 ---
-<i>The Traveller does not share food with the troll</i>
-<i>The fire grows low and the wood runs out</i>
+Traveller: Look, I've already let you in here.
+Traveller: I don't have a lot to begin with. If I don't preserve the food, I might die.
+Troll: It is not as if this was unexpected.
+Troll: Well, Traveller. I have no intention of taking your food by force.
+Troll: In fact... it is not like I have much force in me left.
+Traveller: Surely you're being a bit overdramatic.
+Traveller: Not that I *want* you to take my stuff.
+Troll: How convenient for you... Traveller...
+Troll: "Keep your enemies closer", was that the human aphorism?
+<<eyes Traveller halfClosed>>
+Traveller: Look, as long as we stay in those two opposite corners of the hut...
+Traveller: ...AND don't touch each others' stuff, AND don't talk about dying...
+Traveller: ...then I'm sure we can wait this whole thing out and be on our merry way soon enough.
+
+<<fade Screen out black 3>>
+<<wait 5>>
+<<fade Screen in black 1>>
+<<wait 3>>
+
+<<teleport Troll HiddenAnchor>>
+<<cut Camera InCabinWoodHolderCam>>
+<<wait 0.7>>
+Traveller: (It's dimming...)
+<<wait 0.7>>
+<<setAmount WoodHolder none>>
+<<wait 1>>
+Traveller: (Not good... I'm going through wood faster than I thought.)
+<<cut Camera InCabinWindowCam>>
+Traveller: (And the blizzard just won't stop.)
+Traveller: (This big guy's looking woozy. If there's a good time to get some shut eye, it's probably now.)
+<<fade Screen out black 2>>
+<<wait 2>>
+<<cut Camera InCabinDialogueCam>>
+<<eyes Traveller closed>>
+<<burning Fireplace false>>
+<<teleport TrollFront BlockingDoorAnchor>>
+<<sleep TrollFront>>
+Traveller: ..........
+<<fade Screen in black 2>>
+<<wait 3>>
+<<eyes Traveller halfClosed>>
+Traveller: ?
+Traveller: It's so... cold...
+<<cut Camera InCabinWoodHolderCam>>
+Traveller: Damn... it...
+<<cut Camera InCabinDialogueCam>>
+Traveller: Hey...
+
 <<jump Part04_Opt3_TrollBlock>>
 ===
 
@@ -504,8 +577,32 @@ Traveller: But where is he now?
 title: Part04_Opt3_TrollBlock
 position: 878,108
 ---
-<i>The troll falls asleep in front of the door and the traveller is trapped in the freezing hut</i>
-<i>The Traveller does not survive the night</i>
+Traveller: Hey, we need to get more firewood...
+Traveller: Are you asleep?
+<<dolly Camera InCabinBlockingDoorCam>>
+<<wait 1.5>>
+<<fade Screen out black 0.2>>
+<<wait 0.2>>
+<<brighten TrollFront>>
+<<fade Screen in black 0.2>>
+<<wait 2.5>>
+Traveller: (He's knocked out cold...)
+Traveller: Hey! Can you move?!
+Traveller: Wake up!
+Traveller: (Am I...? Am I stuck here?)
+<<fade Screen out black 2>>
+<<wait 2>>
+Traveller: Help..! Anybody..?
+
+<<cut Camera OutsideCabinNearCam>>
+<<fade Screen in black 2>>
+<<wait 5>>
+<<rollCredits Credits 30>>
+<<wait 30>>
+<<fade Screen out black 2>>
+<<wait 3>>
+<<jump MainMenuInit>>
+
 ===
 
 title: Part04_Opt4_TravellerOut
