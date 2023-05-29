@@ -17,6 +17,7 @@ position: -0,0
 <<burning Fireplace false>>
 <<setAmount WoodHolder full>>
 <<cut Camera OutsideMainMenuCam>>
+<<fade Screen in black 0>>
 
 <<jump MainMenu>>
 ===
@@ -25,12 +26,15 @@ title: MainMenu
 position: -0,0
 ---
 -> Start
+	<<changeGameState InGame>>
 	<<jump Part01>>
 -> Options
 	<<jump Options>>
 -> Credits
+	<<changeGameState InGame>>
 	<<rollCredits Credits 15>>
 	<<wait 15>>
+	<<changeGameState Menu>>
 	<<jump MainMenu>>
 ===
 

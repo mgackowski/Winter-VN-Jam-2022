@@ -7,6 +7,18 @@ public static class SceneInfo
 {
     public static List<GameObject> anchors { get; } = new List<GameObject>();
     public static List<CinemachineVirtualCamera> cameras { get; } = new List<CinemachineVirtualCamera>();
+    public static List<GameStateObserver> gameStateObservers { get; } = new List<GameStateObserver>();
+    public static GameState gameState { get; private set; } = GameState.Menu;
+
+    public enum QualityLevel
+    {
+        High, Balanced
+    }
+
+    public enum GameState
+    {
+        Menu, InGame
+    }
 
     public static void RegisterAnchor(GameObject anchor)
     {
@@ -16,6 +28,10 @@ public static class SceneInfo
     {
         cameras.Add(camera);
     }
+    public static void RegisterGameStateObserver(GameStateObserver observer)
+    {
+        gameStateObservers.Add(observer);
+    }
 
     public static void DeregisterAnchor(GameObject anchor)
     {
@@ -24,6 +40,11 @@ public static class SceneInfo
     public static void DeregisterCamera(CinemachineVirtualCamera camera)
     {
         cameras.Remove(camera);
+    }
+
+    public static void DeregisterGameStateObserver(GameStateObserver observer)
+    {
+        gameStateObservers.Remove(observer);
     }
 
     [YarnCommand("setQuality")]
@@ -59,9 +80,23 @@ public static class SceneInfo
         }
     }
 
-    public enum QualityLevel
+    public static void ChangeGameState(GameState newGameState)
     {
-        High, Balanced
+        gameState = newGameState;
+        foreach(GameStateObserver observer in gameStateObservers)
+        {
+            observer.gameObject.SetActive(true);
+            observer.ReactToGameState(newGameState);
+        }
     }
+
+    [YarnCommand("changeGameState")]
+    public static void ChangeGameState(string newGameState)
+    {
+        ChangeGameState((GameState)System.Enum.Parse(typeof(GameState), newGameState, true));
+
+    }
+
+
 
 }

@@ -654,6 +654,7 @@ Traveller: Help..! Anybody..?
 <<wait 30>>
 <<fade Screen out black 2>>
 <<wait 3>>
+<<changeGameState Menu>>
 <<jump MainMenuInit>>
 
 ===
@@ -714,5 +715,6 @@ position: 1189,-8
 <<fade Screen out black 2>>
 <<wait 3>>
 
+<<changeGameState Menu>>
 <<jump MainMenuInit>>
 ===

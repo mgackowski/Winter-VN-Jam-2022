@@ -24,7 +24,7 @@ public class Credits : MonoBehaviour
     {
         float timeElapsed = 0;
         float textBoxHeight = text.textBounds.size.y;
-        float canvasHeight = 1080f; //TODO: Try not to hardwire
+        float canvasHeight = 0f; //TODO: Try not to hardwire
         Vector3 newPosition = rect.transform.position;
 
 
