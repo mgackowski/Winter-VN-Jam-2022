@@ -1,0 +1,1 @@
+Audio files located in the ThirdParty folder are not included in the repository in order to comply with licensing limitations and limit the amount of space taken by the repository. Audio playing components should default to playing "empty.ogg" if a file is not found.
