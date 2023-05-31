@@ -24,13 +24,13 @@ public class Credits : MonoBehaviour
     {
         float timeElapsed = 0;
         float textBoxHeight = text.textBounds.size.y;
-        float canvasHeight = 0f; //TODO: Try not to hardwire
+        float canvasHeight = 1080f; //TODO: Try not to hardwire
         Vector3 newPosition = rect.transform.position;
 
 
         while (timeElapsed < duration)
         {
-            newPosition.y = Mathf.Lerp(0, textBoxHeight + canvasHeight, timeElapsed / duration);
+            newPosition.y = Mathf.Lerp(0, (textBoxHeight + canvasHeight) /2, timeElapsed / duration);
             rect.transform.position = newPosition;
             timeElapsed += Time.deltaTime;
             yield return null;
