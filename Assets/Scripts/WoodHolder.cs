@@ -8,6 +8,12 @@ public class WoodHolder : MonoBehaviour, IStateful
     public GameObject woodLess;
 
     string currentAmount;
+    AudioSelector audioSelector;
+
+    void Awake()
+    {
+        audioSelector = GetComponent<AudioSelector>();
+    }
 
     public Dictionary<string, string> GetState()
     {
@@ -29,10 +35,12 @@ public class WoodHolder : MonoBehaviour, IStateful
             case "half":
                 woodMore.SetActive(false);
                 woodLess.SetActive(true);
+                audioSelector.Play("wood_pickup");
                 break;
             case "none":
                 woodMore.SetActive(false);
                 woodLess.SetActive(false);
+                audioSelector.Play("wood_pickup");
                 break;
         }
         currentAmount = woodAmount;

@@ -32,7 +32,6 @@ public class Fireplace : MonoBehaviour, IStateful
             fireWood.SetActive(false);
             fireLight.enabled = false;
             fireParticles.Stop();
-
         }
         burningState = value;
     }

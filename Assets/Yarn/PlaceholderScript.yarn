@@ -18,7 +18,9 @@ title: Part01
 <<forced Door false>>
 <<burning Fireplace false>>
 <<setAmount WoodHolder full>>
-
+<<playInt BlizzardSound 0>>
+<<setVolume BlizzardSound 1 0.5>>
+<<fadeInAudio BlizzardSound 1>>
 
 <<cut Camera OutsideWildernessCam>>
 <<fade Screen in white 10>>
@@ -55,13 +57,17 @@ Traveller: A cabin...?
 <<playCutscene CutsceneCam EnterCabin>>
 <<wait 5>>
 <<open Door>>
-<<wait 10>>
+<<wait 5>>
+<<setLowPass BlizzardSound 3000 0.1>>
+<<setVolume BlizzardSound 0.25 0.25>>
+<<wait 5>>
 <<fade Screen out white 0.2>>
 <<wait 0.2>>
 <<fade Screen in white 0.2>>
 <<teleport TravellerFront InCabinCornerAnchor>>
 <<cut Camera InCabinAloneCam>>
 <<close Door>>
+<<setVolume BlizzardSound 0.1 1>>
 <<wait 1>>
 <<slide TravellerFront InCabinCentreAnchor 3>>
 <<walk TravellerFront>>
@@ -123,6 +129,7 @@ Traveller: What do I do?!
 "Thunderous voice": I am tired... and starved...
 <<cut Camera InCabinDialogueCam>>
 Traveller: Are you... human?
+<<forced Door false>>
 <<cut Camera InCabinDoorCam>>
 "Thunderous voice": ..........
 "Thunderous voice": I am what you humans call a "mountain troll".
@@ -146,10 +153,10 @@ position: 278,-238
 <<eyes Traveller closed>>
 <<shiver Traveller false>>
 Traveller: ...... Hold on, I'm going to unlock the door.
-<<forced Door false>>
 <<fade Screen out black 0.5>>
 <<wait 0.5>>
 
+<<playStr Door door_handle>>
 *CLICK*
 
 <<cut Camera InCabinDoorCam>>
