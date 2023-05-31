@@ -15,6 +15,8 @@ namespace Yarn.Unity
     /// </summary>
     public class CustomLineView : DialogueViewBase
     {
+        [NonSerialized] public Character currentSpeaker;
+
         [SerializeField] string[] travelerNames = {"Traveler"};
         [SerializeField] string[] trollNames = { "Troll" };
         [SerializeField] TravelerBack travelerActor;
@@ -310,18 +312,21 @@ namespace Yarn.Unity
             StartCoroutine(RunLineInternal(dialogueLine, onDialogueLineFinished));
             
             if(travelerActor != null && travelerNames.Contains<string>(dialogueLine.CharacterName)) {
+                currentSpeaker = Character.Traveller;
                 travelerActor.Talk(true);
                 lineText.color = travellerColour;
                 continueButton.GetComponent<Image>().color = travellerColour;
             }
             else if (trollActor != null && trollNames.Contains<string>(dialogueLine.CharacterName))
             {
+                currentSpeaker = Character.Troll;
                 trollActor.Talk(true);
                 lineText.color = trollColour;
                 continueButton.GetComponent<Image>().color = trollColour;
             }
             else
             {
+                currentSpeaker = Character.Narrator;
                 lineText.color = Color.white;
                 continueButton.GetComponent<Image>().color = Color.white;
             }

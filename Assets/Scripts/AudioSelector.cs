@@ -18,10 +18,12 @@ public class AudioSelector : MonoBehaviour, IStateful
     void Awake()
     {
         source = GetComponent<AudioSource>();
-        if (source.clip == null)
-        {
-            source.clip = nullClip;
-            Debug.LogWarningFormat("Audio clip not found for object {}, replacing with empty sound clip.", gameObject.name);
+        for (int i = 0; i < clips.Count; i++) {
+            if (clips[i] == null)
+            {
+                clips[i] = nullClip;
+                Debug.LogFormat("Audio clip {0} not found for object {1}, replacing with empty sound clip.", i, gameObject.name);
+            }
         }
         preferredVolume = source.volume;
         lowPassFilter = GetComponent<AudioLowPassFilter>();
@@ -31,6 +33,7 @@ public class AudioSelector : MonoBehaviour, IStateful
         }
     }
 
+    [YarnCommand("playStr")]
     public void Play(string clipName)
     {
         foreach (AudioClip clip in clips) {
@@ -41,6 +44,13 @@ public class AudioSelector : MonoBehaviour, IStateful
             }
         }
         source.clip = nullClip;
+        source.Play();
+    }
+
+    [YarnCommand("playInt")]
+    public void Play(int clipNumber)
+    {
+        source.clip = clips[clipNumber];
         source.Play();
     }
 
@@ -60,6 +70,13 @@ public class AudioSelector : MonoBehaviour, IStateful
     public void SetLowPass(float lowPassTarget, float transitionDuration)
     {
         StartCoroutine(setLowPass(lowPassTarget, transitionDuration));
+    }
+
+    [YarnCommand("setVolume")]
+    public void SetVolume(float targetVolume, float durationSeconds)
+    {
+        preferredVolume = targetVolume;
+        StartCoroutine(fade(source.volume, preferredVolume, durationSeconds, false));
     }
 
     IEnumerator setLowPass(float lowPassTarget, float transitionDuration)

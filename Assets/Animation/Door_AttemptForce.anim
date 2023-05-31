@@ -4094,6 +4094,20 @@ AnimationClip:
     floatParameter: 0.1
     intParameter: 0
     messageOptions: 0
+  - time: 0.016666668
+    functionName: Play
+    data: door_forced_bang
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 0.45
+    functionName: Play
+    data: door_handle
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
   - time: 1.2
     functionName: GenerateImpulseWithForce
     data: 
@@ -4101,10 +4115,31 @@ AnimationClip:
     floatParameter: 0.1
     intParameter: 0
     messageOptions: 0
+  - time: 1.2166667
+    functionName: Play
+    data: door_forced_bang
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
   - time: 1.8333334
     functionName: GenerateImpulseWithForce
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0.1
+    intParameter: 0
+    messageOptions: 0
+  - time: 1.85
+    functionName: Play
+    data: door_forced_bang
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 2.35
+    functionName: Play
+    data: door_handle
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
     intParameter: 0
     messageOptions: 0
