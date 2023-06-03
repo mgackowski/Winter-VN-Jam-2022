@@ -12,6 +12,7 @@ position: -0,0
 <<teleport Traveller HiddenAnchor>>
 <<teleport TravellerFront HiddenAnchor>>
 <<teleport Chair ChairDefaultAnchor>>
+<<advance Troll>>
 <<close Door>>
 <<forced Door false>>
 <<burning Fireplace false>>
@@ -37,6 +38,8 @@ position: -0,0
 	<<wait 15>>
 	<<changeGameState Menu>>
 	<<jump MainMenu>>
+-> Quit (ESC)
+	<<quitGame ProgramExecution>>
 ===
 
 title: Options

@@ -19,6 +19,12 @@ public class TrollProfile : MonoBehaviour, IStateful
         sitting = true;
     }
 
+    [YarnCommand("advance")]
+    public void SetWalking()
+    {
+        anim.SetTrigger("Walk");
+    }
+
     public void Talk(bool value)
     {
         anim.SetBool("Talking", value);
