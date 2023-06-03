@@ -18,6 +18,7 @@ position: -0,0
 <<setAmount WoodHolder full>>
 <<cut Camera OutsideMainMenuCam>>
 <<fade Screen in black 0>>
+<<setVolume BlizzardSound 0 0>>
 
 <<jump MainMenu>>
 ===
