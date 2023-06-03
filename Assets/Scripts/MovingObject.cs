@@ -1,17 +1,20 @@
 using System;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using Yarn.Unity;
 
-public class MovingObject : MonoBehaviour
+public class MovingObject : MonoBehaviour, IStateful
 {
+    string currentLocation;
 
     [YarnCommand("teleport")]
     public void Teleport(string location)
     {
         GameObject matchingAnchor = SceneInfo.anchors.Find(anchor => anchor.name.Equals(location, StringComparison.OrdinalIgnoreCase));
         if(matchingAnchor != null)
-        { 
+        {
+            currentLocation = location;
             transform.parent = matchingAnchor.transform;
             transform.localPosition = Vector3.zero;
             transform.localRotation = Quaternion.identity;
@@ -28,6 +31,7 @@ public class MovingObject : MonoBehaviour
         GameObject matchingAnchor = SceneInfo.anchors.Find(anchor => anchor.name.Equals(location, StringComparison.OrdinalIgnoreCase));
         if (matchingAnchor != null)
         {
+            currentLocation = location;
             StartCoroutine(LerpToAnchor(matchingAnchor.transform, durationSeconds));
         }
         else
@@ -58,4 +62,21 @@ public class MovingObject : MonoBehaviour
 
     }
 
+    public Dictionary<string, string> GetState()
+    {
+        return new Dictionary<string, string>()
+        {
+            { "location", currentLocation }
+        };
+    }
+
+    public void SetState(Dictionary<string, string> keyValuePairs)
+    {
+        if(keyValuePairs.ContainsKey("location")) Teleport(keyValuePairs["location"]);
+    }
+
+    public string GetObjectName()
+    {
+        return gameObject.name;
+    }
 }

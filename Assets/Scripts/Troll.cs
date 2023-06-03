@@ -1,8 +1,9 @@
 using UnityEngine;
 using Yarn.Unity;
 using System.Linq;
+using System.Collections.Generic;
 
-public class Troll : MonoBehaviour
+public class Troll : MonoBehaviour, IStateful
 {
     public Material trollMaterial;
     public Material trollEyeMaterial;
@@ -12,6 +13,9 @@ public class Troll : MonoBehaviour
     private Animator anim;
     private Renderer[] bodyRends;
     private Renderer[] pupilRends;
+
+    string lastAnimTrigger = "";
+    bool darkened;
 
     void Start()
     {
@@ -24,19 +28,25 @@ public class Troll : MonoBehaviour
     [YarnCommand("idle")]
     public void SetIdle()
     {
-        anim.SetTrigger("Calm");
+        string triggerName = "Calm";
+        anim.SetTrigger(triggerName);
+        lastAnimTrigger = triggerName;
     }
 
     [YarnCommand("agitate")]
     public void SetAgitate()
     {
-        anim.SetTrigger("Agitate");
+        string triggerName = "Agitate";
+        anim.SetTrigger(triggerName);
+        lastAnimTrigger = triggerName;
     }
 
     [YarnCommand("sleep")]
     public void SetSleep()
     {
-        anim.SetTrigger("Sleep");
+        string triggerName = "Sleep";
+        anim.SetTrigger(triggerName);
+        lastAnimTrigger = triggerName;
     }
 
     [YarnCommand("darken")]
@@ -50,6 +60,7 @@ public class Troll : MonoBehaviour
         {
             rend.material = scaryTrollEyeMaterial;
         }
+        darkened = true;
     }
 
     [YarnCommand("brighten")]
@@ -63,5 +74,41 @@ public class Troll : MonoBehaviour
         {
             rend.material = trollEyeMaterial;
         }
+        darkened = false;
+    }
+
+    public Dictionary<string, string> GetState()
+    {
+        return new Dictionary<string, string>()
+        {
+            { "lastAnimTrigger", lastAnimTrigger},
+            { "darkened", darkened.ToString() },
+        };
+    }
+
+    public void SetState(Dictionary<string, string> keyValuePairs)
+    {
+        if(keyValuePairs.ContainsKey("lastAnimTrigger"))
+        {
+            string lastTrigger = keyValuePairs["lastAnimTrigger"];
+            if (lastTrigger != "")
+            {
+                anim.SetTrigger(lastTrigger);
+                lastAnimTrigger = lastTrigger;
+            } 
+        }
+        if (bool.Parse(keyValuePairs["darkened"]))
+        {
+            Darken();
+        }
+        else
+        {
+            Brighten();
+        }
+    }
+
+    public string GetObjectName()
+    {
+        return gameObject.name;
     }
 }

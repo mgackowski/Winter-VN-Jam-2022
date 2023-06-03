@@ -1,9 +1,8 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Yarn.Unity;
 
-public class Weather : MonoBehaviour
+public class Weather : MonoBehaviour, IStateful
 {
     [SerializeField] GameObject sunlight;
     [SerializeField] GameObject lightSnow;
@@ -11,6 +10,11 @@ public class Weather : MonoBehaviour
     [SerializeField] GameObject dustStorm;
     [SerializeField] float heavyFogLevel = 0.12f;
     [SerializeField] float lightFogLevel = 0.005f;
+    [SerializeField] Color brightFogColor;
+    [SerializeField] Color darkFogColor;
+
+    string currentWeather = "heavySnow";
+    float currentTime = 23f;
 
     [YarnCommand("setWeather")]
     public void SetWeather(string weatherType)
@@ -39,6 +43,7 @@ public class Weather : MonoBehaviour
                 Debug.LogError("Incorrect weather parameter provided.");
                 break;
         }
+        currentWeather = weatherType;
 
     }
 
@@ -47,15 +52,37 @@ public class Weather : MonoBehaviour
     {
         //TODO: Current solution uses a hardwired y component   
         
-        sunlight.transform.rotation = Quaternion.Euler((hourOfDay - 6f) * 15f, -6.68f, 0f);
+        sunlight.transform.rotation = Quaternion.Euler((hourOfDay - 6f) * 15f, -30f, 0f);
 
-        //Vector3 currentRotation = sunlight.transform.eulerAngles;
-        //currentRotation.x = (hourOfDay - 6f) * 15f;
-        //sunlight.transform.eulerAngles = currentRotation;
-        // 6am is 0 degrees
-        // 12pm is 90 degrees
+        if(hourOfDay >= 4 && hourOfDay < 18)
+        {
+            RenderSettings.fogColor = brightFogColor;
+        }
+        else
+        {
+            RenderSettings.fogColor = darkFogColor;
+        }
+
+        currentTime = hourOfDay;
     }
 
+    public Dictionary<string, string> GetState()
+    {
+        return new Dictionary<string, string>()
+        {
+            { "weather", currentWeather },
+            { "time", currentTime.ToString() }
+        };
+    }
 
+    public void SetState(Dictionary<string, string> keyValuePairs)
+    {
+        if (keyValuePairs.ContainsKey("weather")) SetWeather(keyValuePairs["weather"]);
+        if (keyValuePairs.ContainsKey("time")) SetTime(float.Parse(keyValuePairs["time"]));
+    }
 
+    public string GetObjectName()
+    {
+        return gameObject.name;
+    }
 }

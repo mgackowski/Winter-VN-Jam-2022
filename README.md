@@ -1,2 +1,4 @@
-# winter-vm-jam-2022
- Entry for the Winter Visual Notel Jam (2022) hosted on itch.io
+# Untitled Winter Game
+ This started as an entry for the Winter Visual Notel Jam (2022) hosted on itch.io.
+
+ All rights reserved - do not distribute without the authors' explicit permission.

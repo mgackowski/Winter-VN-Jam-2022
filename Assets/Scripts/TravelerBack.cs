@@ -1,7 +1,8 @@
 using Yarn.Unity;
 using UnityEngine;
+using System.Collections.Generic;
 
-public class TravelerBack : MonoBehaviour
+public class TravelerBack : MonoBehaviour, IStateful
 {
     private Animator anim;
 
@@ -39,4 +40,25 @@ public class TravelerBack : MonoBehaviour
         anim.SetBool("Talking", value);
     }
 
+    public Dictionary<string, string> GetState()
+    {
+        return new Dictionary<string, string>()
+        {
+            { "shivering", anim.GetBool("Shivering").ToString() },
+            { "eyesClosed", anim.GetBool("EyesClosed").ToString() },
+            { "eyesHalfClosed", anim.GetBool("EyesHalfClosed").ToString() },
+        };
+    }
+
+    public void SetState(Dictionary<string, string> keyValuePairs)
+    {
+        anim.SetBool("Shivering", bool.Parse(keyValuePairs["shivering"]));
+        anim.SetBool("EyesClosed", bool.Parse(keyValuePairs["eyesClosed"]));
+        anim.SetBool("EyesHalfClosed", bool.Parse(keyValuePairs["eyesHalfClosed"]));
+    }
+
+    public string GetObjectName()
+    {
+        return gameObject.name;
+    }
 }

@@ -1,0 +1,772 @@
+title: EmptyNode
+position: -242,3
+---
+===
+
+title: Part01
+---
+<<fade Screen out white 0>>
+<<wait 1>>
+<<setTimeOfDay Effects 20>>
+<<setWeather Effects HeavySnow>>
+<<teleport Troll HiddenAnchor>>
+<<teleport TrollFront HiddenAnchor>>
+<<teleport Traveller HiddenAnchor>>
+<<teleport TravellerFront HiddenAnchor>>
+<<teleport Chair ChairDefaultAnchor>>
+<<close Door>>
+<<forced Door false>>
+<<burning Fireplace false>>
+<<setAmount WoodHolder full>>
+<<playInt BlizzardSound 0>>
+<<setVolume BlizzardSound 1 0.5>>
+<<fadeInAudio BlizzardSound 1>>
+
+<<cut Camera OutsideWildernessCam>>
+<<fade Screen in white 10>>
+<<wait 2>>
+
+Traveller: *huff* *puff*
+Traveller: Is this... the end...?
+
+<<fade Screen out white 2>>
+<<wait 3>>
+<<teleport TravellerFront WildernessAnchor>>
+<<walk TravellerFront>>
+<<wait 1>>
+<<fade Screen in white 2>>
+<<wait 1>>
+
+Traveller: I don't know how long I can survive this blizzard.
+Traveller: At least this is just a temporary script.
+<<tremble TravellerFront>>
+Traveller: Libby's version might not be as merciful.
+<<walk TravellerFront>>
+Traveller: *huff* *puff*
+
+<<fade Screen out white 2>>
+<<wait 3>>
+<<cut Camera OutsideCabinFarCam>>
+<<fade Screen in white 1>>
+Traveller: ...?
+Traveller: A cabin...?
+<<fade Screen out white 3>>
+<<wait 3>>
+<<fade Screen in white 1>>
+<<shake CutsceneCam true>>
+<<playCutscene CutsceneCam EnterCabin>>
+<<wait 5>>
+<<open Door>>
+<<wait 3>>
+<<setLowPass BlizzardSound 3000 1>>
+<<setVolume BlizzardSound 0.25 1>>
+<<wait 7>>
+<<fade Screen out white 0.2>>
+<<wait 0.2>>
+<<fade Screen in white 0.2>>
+<<teleport TravellerFront InCabinCornerAnchor>>
+<<cut Camera InCabinAloneCam>>
+<<close Door>>
+<<setVolume BlizzardSound 0.1 1>>
+<<wait 1>>
+<<slide TravellerFront InCabinCentreAnchor 3>>
+<<walk TravellerFront>>
+<<wait 3>>
+<<stand TravellerFront>>
+Traveller: It looks abandoned.
+Traveller: Which is probably a good thing, considering the stories of ferocious beasts roaming these mountains.
+Traveller: ...!
+
+<<teleport TravellerFront HiddenAnchor>>
+<<cut Camera InCabinWoodHolderCam>>
+Traveller: Whoever was here made sure to leave some firewood.
+Traveller: We live another day.
+<<setAmount WoodHolder half>>
+<<wait 1>>
+<<burning Fireplace true>>
+<<wait 2>>
+<<cut Camera InCabinAloneCam>>
+<<teleport TravellerFront InCabinCentreAnchor>>
+<<wait 1>>
+<<sitDown TravellerFront>>
+<<wait 1>>
+Traveller: ..........
+<<cut Camera InCabinWindowCam>>
+Traveller: There's no choice but to stay the night.
+Traveller: May as well get some shut-eye.
+<<fade Screen out black 3>>
+<<setVolume BlizzardSound 0 3>>
+<<wait 4>>
+<<playStr Music scary>>
+<<setVolume Music 1 0>>
+
+<<forced Door true>>
+KNOCK. KNOCK.
+
+<<teleport TravellerFront HiddenAnchor>>
+<<teleport Traveller TravellerDefaultAnchor>>
+<<teleport Troll HiddenAnchor>>
+<<cut Camera InCabinDialogueCam>>
+<<eyes Traveller halfClosed>>
+<<wait 0.5>>
+
+<<fade Screen in black 0>>
+<<setVolume BlizzardSound 0.1 0>>
+<<eyes Traveller open>>
+Traveller: ...?!
+<<dolly Camera InCabinDoorCam>>
+<<wait 1>>
+"Thunderous voice": Let me in!
+<<wait 2>>
+<<cut Camera InCabinDialogueCam>>
+Traveller: That force!
+Traveller: No human could knock this hard!
+"Thunderous voice": Do not ignore me, traveller!
+<<cut Camera InCabinDoorCam>>
+"Thunderous voice": A hearthy smoke billows out of your chimney!
+<<cut Camera InCabinDialogueCam>>
+Traveller: Shit...!
+<<shiver Traveller true>>
+Traveller: What do I do?!
+<<cut Camera InCabinDoorCam>>
+"Thunderous voice": The night is... viciously cold.
+"Thunderous voice": I am tired... and starved...
+<<cut Camera InCabinDialogueCam>>
+Traveller: Are you... human?
+<<forced Door false>>
+<<cut Camera InCabinDoorCam>>
+"Thunderous voice": ..........
+"Thunderous voice": I am what you humans call a "mountain troll".
+Troll: I seek only shelter from this frigid night.
+Troll: Traveller. I am asking you politely. Please.
+<<cut Camera InCabinDialogueCam>>
+Traveller: ...
+Traveller: (Is this a good idea...?)
+
+-> <i>Invite troll
+	<<jump Part02_Opt1_Invite>>
+-> <i>Do nothing
+	<<jump Part02_Opt2_Ignore>>
+-> <i>Refuse
+	<<jump Part02_Opt3_Refuse>>
+===
+
+title: Part02_Opt1_Invite
+position: 278,-238
+---
+<<eyes Traveller closed>>
+<<shiver Traveller false>>
+Traveller: ...... Hold on, I'm going to unlock the door.
+<<fade Screen out black 0.5>>
+<<wait 0.5>>
+
+<<playStr Door door_handle>>
+*CLICK*
+
+<<cut Camera InCabinDoorCam>>
+<<eyes Traveller open>>
+<<shiver Traveller true>>
+<<teleport TrollFront AtDoorAnchor>>
+<<darken TrollFront>>
+<<idle TrollFront>>
+<<fade Screen in black 0.5>>
+<<wait 2>>
+<<open Door>>
+<<wait 0.5>>
+<<setVolume BlizzardSound 0.5 1>>
+<<dolly Camera InCabinDialogueCam>>
+<<wait 4>>
+<<teleport Troll AtDoorAnchor>>
+<<slide Troll TrollDefaultAnchor 3>>
+<<wait 3>>
+<<close Door>>
+<<setVolume BlizzardSound 0.1 1>>
+<<sit Troll>>
+<<wait 2>>
+<<teleport TrollFront HiddenAnchor>>
+
+Traveller: It's... huge!
+Troll: Thank you, traveller. I am ever so relieved by your compassion.
+Traveller: ... D... don't mention it.
+Troll: Were you not afraid?
+
+<<eyes Traveller closed>>
+<<shiver Traveller false>>
+
+Traveller: Afraid? No way. I've seen much greater beasts on my journeys.
+Troll: Is that so?
+Traveller: D- damn straight.
+Troll: That is fair. I am perhaps only half the size of my kin wandering these lands.
+<<eyes Traveller open>>
+Troll: Why, you should see my brother! Tall as a mountain! He could eat a caribou whole and yet have room for more.
+Traveller: ...
+Troll: Speaking of food... Traveller, I have been wandering for days on end.
+Troll: You wouldn't mind sharing some of that food I see you holding?
+
+Traveller: (Should I share my food with him...?)
+-> <i>Share food</i>
+	<<jump Part03_Opt1_InviteShareFood>>
+-> <i>Refuse food</i>
+	<<jump Part03_Opt2_InviteRefuseFood>>
+===
+
+title: Part02_Opt2_Ignore
+position: 279,1
+---
+<<eyes Traveller closed>>
+Traveller: (I really shouldn't let him in.)
+Traveller: (Maybe if I wait, he'll go someplace else.)
+<<forced Door false>>
+<<wait 2>>
+<<shiver Traveller false>>
+<<eyes Traveller open>>
+Traveller: (Is he... gone?)
+<<wait 1>>
+
+<<teleport TrollFront AtDoorAnchor>>
+<<darken TrollFront>>
+<<agitate TrollFront>>
+<<open Door>>
+<<playStr Door door_slammed_open>>
+* CRASH *
+<<setVolume BlizzardSound 0.5 0.1>>
+<<fade Screen out white 0.1>>
+<<wait 0.1>>
+<<cut Camera InCabinDoorCam>>
+<<fade Screen in white 0.1>>
+<<wait 1>>
+
+Troll: Unbelievable!
+<<shiver Traveller true>>
+Troll: I have seen humans stoop to hideous lows, but at least all had the decency to acknowledge my presence!
+
+<<dolly Camera InCabinDialogueCam>>
+<<wait 4>>
+<<teleport Troll AtDoorAnchor>>
+<<slide Troll TrollDefaultAnchor 3>>
+<<wait 3>>
+<<close Door>>
+<<setVolume BlizzardSound 0.1 1>>
+<<sit Troll>>
+<<wait 2>>
+<<teleport TrollFront HiddenAnchor>>
+
+Troll: You would deny me the most basic of courtesies in my time of desperate need?
+Traveller: I... I...
+Troll: Tell me, Traveller. Are these your personal lodgings?
+<<shiver Traveller false>>
+Traveller: I-it doesn't matter. I found it first, and I have a right to protect myself.
+Troll: Ah, I see. The right to protect oneself, Traveller?
+Traveller: Y-yeah. It's a wolf eat wolf world out there.
+Troll: Bah! Hah! You see yourself a wolf, Traveller? Now that, I find amusing.
+Troll: It is true that, faced with harsh circumstances, the noble wolf may turn against others of its own kind.
+Troll: Then tell me this Traveller - are your present circumstances so dire, so threatening, that you would eat your own pup to survive?
+Troll: Because what I see is a rather well fed tabby resting by a fireplace!
+Traveller: Look, it's a human expression- hey!
+Traveller: Who's a "well-fed tabby"?!
+<<wait 2>>
+Troll: Look, Traveller. I wish you no harm. What matters to me now is that we are both safe from the blizzard.
+Troll: And so, I apologise for my outburst.
+<<cut Camera InCabinWindowCam>>
+Troll: Who knows how long we might share this cabin for?
+<<fade Screen out black 2>>
+<<setVolume BlizzardSound 0 2>>
+<<wait 2>>
+<<cut Camera InCabinDialogueCam>>
+
+Traveller: (It's been hours... I'm starving.)
+Traveller: (This is the last of my bread. Hunting or foraging is out of the question right now...)
+
+<<eyes Traveller halfClosed>>
+<<fade Screen in black 2>>
+<<setVolume BlizzardSound 0.1 2>>
+<<wait 2>>
+
+Troll: Traveller...
+Traveller: (Uh oh.)
+Troll: I see you are better equipped than I thought. You were wise to pack food that wouldn't perish easily.
+Troll: I have been wandering for days, and my health has faltered so...
+Troll: Would you kindly share some of your food with me?
+
+Traveller: (Should I share my food with him...?)
+-> <i>Share food</i>
+	<<jump Part03_Opt3_IgnoreShareFood>>
+-> <i>Do not share food</i>
+	<<jump Part03_Opt4_IgnoreRefuseFood>>
+===
+
+title: Part02_Opt3_Refuse
+position: 292,238
+---
+Traveller: ...
+Traveller: Just... go away, okay?
+<<forced Door false>>
+<<wait 1>>
+Troll: ... Traveller?
+<<shiver Traveller false>>
+Traveller: You heard me. It's occupied. Go find some other place!
+Troll: There is no other place for miles, Traveller.
+Traveller: I'm sure you'll do just fine!
+<<wait 3>>
+<<eyes Traveller halfClosed>>
+<<wait 0.5>>
+Traveller: (Is he gone?)
+<<wait 1>>
+<<eyes Traveller closed>>
+Traveller: Oh, thank God.
+Traveller: Not a fan of moral dilemmas.
+<<eyes Traveller open>>
+<<cut Camera InCabinBlockingDoorCam>>
+Traveller: I should probably put up a barricade in case he decides to come back hungry.
+<<wait 0.7>>
+<<teleport Chair ChairBarricadeAnchor>>
+<<playInt WoodHolder 0>>
+<<wait 0.7>>
+Traveller: That'll do.
+<<cut Camera InCabinDialogueCam>>
+Traveller: Now let's just hope the wind dies down. I can't stay here forever.
+
+<<jump Part03_Opt5_Refuse>>
+===
+
+title: Part03_Opt1_InviteShareFood
+position: 543,-333
+---
+Traveller: Yeah... sure.
+
+<<fade Screen out black 1>>
+<<setVolume BlizzardSound 0 1>>
+<<wait 1>>
+<<setAmount WoodHolder half>>
+
+And so, the Troll and the Traveller shared stories of their adventures over a meal, their bodies warmed by the fire, and their spirits kindled by a sense of companionship.
+
+<<fade Screen in black 1>>
+<<setVolume BlizzardSound 0.1 1>>
+<<wait 1>>
+
+Troll: ...and that is the reason I am no longer welcome at that particular alehouse.
+Traveller: Wow. I didn't really peg you as a revelrous type.
+Traveller: Give me a second, the fire is dimming.
+
+<<teleport Troll HiddenAnchor>>
+<<cut Camera InCabinWoodHolderCam>>
+<<wait 0.7>>
+<<setAmount WoodHolder none>>
+<<wait 1>>
+Traveller: Not good... we're going through wood faster than I thought.
+<<teleport Troll TrollDefaultAnchor>>
+<<cut Camera InCabinWindowCam>>
+Traveller: And the blizzard just won't stop.
+
+<<jump Part04_Opt1_FriendlyAdventure>>
+===
+
+title: Part03_Opt2_InviteRefuseFood
+position: 546,-193
+---
+Traveller: No. I need the food.
+Troll: I have no intention of taking it by force.
+<<eyes Traveller halfClosed>>
+Traveller: That's awfully kind of you.
+...
+<<fade Screen out black 3>>
+<<setVolume BlizzardSound 0 3>>
+<<wait 3>>
+<<setAmount WoodHolder half>>
+<<eyes Traveller closed>>
+<<wait 1>>
+<<fade Screen in black 3>>
+<<setVolume BlizzardSound 0.1 3>>
+<<wait 3>>
+<<eyes Traveller halfClosed>>
+<<wait 3>>
+<<teleport Troll HiddenAnchor>>
+<<cut Camera InCabinWoodHolderCam>>
+<<wait 0.7>>
+Traveller: (It's dimming...)
+<<wait 0.7>>
+<<setAmount WoodHolder none>>
+<<wait 1>>
+Traveller: (Not good... I'm going through wood faster than I thought.)
+<<teleport Troll TrollDefaultAnchor>>
+<<cut Camera InCabinWindowCam>>
+Traveller: (And the blizzard just won't stop.)
+
+<<jump Part04_Opt2_TrollGone>>
+===
+
+title: Part03_Opt3_IgnoreShareFood
+position: 545,-51
+---
+<<eyes Traveller closed>>
+<<wait 0.5>>
+Traveller: I guess you've been through a lot too, huh.
+<<eyes Traveller open>>
+Traveller: Yeah, you can have half of this. I guess it's not much, though.
+Troll: Thank you, Traveller. Whatever you can spare is enough.
+
+<<fade Screen out black 1>>
+<<setVolume BlizzardSound 0 1>>
+<<wait 1>>
+<<setAmount WoodHolder half>>
+
+The Troll and the Traveller share a silent moment over a paltry meal. Though their meeting was tense, the warm fire keeps them from losing hope.
+
+<<eyes Traveller halfClosed>>
+<<fade Screen in black 1>>
+<<setVolume BlizzardSound 0.1 1>>
+<<wait 3>>
+
+<<teleport Troll HiddenAnchor>>
+<<cut Camera InCabinWoodHolderCam>>
+<<wait 0.7>>
+Traveller: (It's dimming...)
+<<wait 0.7>>
+<<setAmount WoodHolder none>>
+<<wait 1>>
+Traveller: (Not good... I'm going through wood faster than I thought.)
+<<teleport Troll TrollDefaultAnchor>>
+<<cut Camera InCabinWindowCam>>
+Traveller: (And the blizzard just won't stop.)
+
+<<jump Part04_Opt2_TrollGone>>
+===
+
+title: Part03_Opt4_IgnoreRefuseFood
+position: 550,112
+---
+Traveller: Look, I've already let you in here.
+Traveller: I don't have a lot to begin with. If I don't preserve the food, I might die.
+Troll: It is not as if this was unexpected.
+Troll: Well, Traveller. I have no intention of taking your food by force.
+Troll: In fact... it is not like I have much force in me left.
+Traveller: Surely you're being a bit overdramatic.
+Traveller: Not that I *want* you to take my stuff.
+Troll: How convenient for you... Traveller...
+Troll: "Keep your enemies closer", was that the human aphorism?
+<<eyes Traveller halfClosed>>
+Traveller: Look, as long as we stay in those two opposite corners of the hut...
+Traveller: ...AND don't touch each others' stuff, AND don't talk about dying...
+Traveller: ...then I'm sure we can wait this whole thing out and be on our merry way soon enough.
+
+<<fade Screen out black 3>>
+<<setVolume BlizzardSound 0 3>>
+<<wait 5>>
+<<fade Screen in black 1>>
+<<setVolume BlizzardSound 0.1 1>>
+<<wait 3>>
+
+<<teleport Troll HiddenAnchor>>
+<<cut Camera InCabinWoodHolderCam>>
+<<wait 0.7>>
+Traveller: (It's dimming...)
+<<wait 0.7>>
+<<setAmount WoodHolder none>>
+<<wait 1>>
+Traveller: (Not good... I'm going through wood faster than I thought.)
+<<cut Camera InCabinWindowCam>>
+Traveller: (And the blizzard just won't stop.)
+Traveller: (This big guy's looking woozy. If there's a good time to get some shut eye, it's probably now.)
+<<fade Screen out black 2>>
+<<setVolume BlizzardSound 0 2>>
+<<wait 2>>
+<<cut Camera InCabinDialogueCam>>
+<<eyes Traveller closed>>
+<<burning Fireplace false>>
+<<teleport TrollFront BlockingDoorAnchor>>
+<<sleep TrollFront>>
+Traveller: ..........
+<<fade Screen in black 2>>
+<<setVolume BlizzardSound 0.1 2>>
+<<wait 3>>
+<<eyes Traveller halfClosed>>
+Traveller: ?
+Traveller: It's so... cold...
+<<cut Camera InCabinWoodHolderCam>>
+Traveller: Damn... it...
+<<cut Camera InCabinDialogueCam>>
+Traveller: Hey...
+
+<<jump Part04_Opt3_TrollBlock>>
+===
+
+title: Part03_Opt5_Refuse
+position: 557,272
+---
+Traveller: At least I still have some food left.
+<<fade Screen out black 2>>
+<<setVolume BlizzardSound 0 2>>
+<<wait 2>>
+<<eyes Traveller halfClosed>>
+<<fade Screen in black 2>>
+<<setVolume BlizzardSound 0.1 2>>
+<<wait 2>>
+Traveller: This entire journey was a mistake.
+Traveller: I am never volunteering for anything again.
+Traveller: When's the last time ANYONE did ANYTHING for me?
+<<shiver Traveller true>>
+Traveller: Pretty sure I was THIS close to becoming troll food today.
+Traveller: Oh, right, the fire.
+<<cut Camera InCabinWoodHolderCam>>
+<<wait 0.7>>
+Traveller: It's getting really dim.
+<<wait 0.7>>
+<<setAmount WoodHolder none>>
+<<shiver Traveller false>>
+<<wait 1>>
+Traveller: That's not good. I'm going through wood faster than I thought.
+Traveller: How long have I been here? How many hours?
+Traveller: ... How many days? MONTHS?
+Traveller: ...
+Traveller: Well, no. It's still dark. So maybe not months.
+<<cut Camera InCabinWindowCam>>
+Traveller: This blizzard...
+Traveller: Going out there is out of the question.
+<<cut Camera InCabinDialogueCam>>
+
+<<jump Part04_Opt4_TravellerOut>>
+===
+
+title: Part04_Opt1_FriendlyAdventure
+position: 873,-329
+---
+Troll: The cold is unrelenting, Traveller. We must seek more firewood.
+<<cut Camera InCabinDialogueCam>>
+<<eyes Traveller closed>>
+Traveller: ...
+Troll: This should take but a trice.
+<<eyes Traveller open>>
+Traveller: You're going out there?!
+Troll: Hah! Hah! Hah! Do you fear for me, Traveller?
+Traveller: Well, no! I mean, yes, I- just, are you sure?
+Troll: Do not worry. Now that some of my strength is regained, I should withstand the blizzard.
+Troll: On my way here, I passed by a grotto, sheltering a stockpile of dry wood. I do not know who left it there, although I suspect it was left by an adventurer not unlike ourselves.
+Traveller: That's... tremendous! Thank you!
+Troll: As you say, Traveller... don't mention it.
+
+<<fade Screen out black 2>>
+<<setVolume BlizzardSound 0 2>>
+<<wait 2>>
+
+Stocked with firewood to keep them warm, the Troll and the Traveller endure the harsh blizzard.
+They venture forth, eager to start their next adventure together.
+
+<<open Door>>
+<<playStr Music happy_ending>>
+<<setVolume Music 1 0>>
+<<wait 3>>
+<<teleport Troll HiddenAnchor>>
+<<teleport Traveller HiddenAnchor>>
+<<teleport TrollFront EpilogueAnchorTroll>>
+<<teleport TravellerFront TravellerDefaultAnchor>>
+<<idle TrollFront>>
+<<walk TravellerFront>>
+<<brighten TrollFront>>
+<<setTimeOfDay Effects 6>>
+<<setWeather Effects clear>>
+<<cut Camera OutsideCabinNearCam>>
+<<burning Fireplace false>>
+<<fade Screen in black 2>>
+<<wait 2>>
+<<slide TravellerFront EpilogueAnchorTraveller 4>>
+<<wait 4>>
+<<stand TravellerFront>>
+<<wait 3>>
+<<fade Screen out black 2>>
+<<wait 2>>
+<<teleport TravellerFront CutsceneCreditsTravellerAnchor>>
+<<walk TravellerFront>>
+<<agitate TrollFront>>
+<<teleport TrollFront CutsceneCreditsTrollAnchor>>
+<<setTimeOfDay Effects 16>>
+
+<<jump Credits>>
+
+===
+
+title: Part04_Opt2_TrollGone
+position: 870,-124
+---
+Troll: The cold is unrelenting, Traveller. We must seek more firewood.
+<<cut Camera InCabinDialogueCam>>
+<<eyes Traveller closed>>
+Traveller: ...
+Troll: I will go and collect more.
+<<eyes Traveller open>>
+Traveller: You're going out in that blizzard?!
+Troll: Oh? Are you concerned for me Traveller?
+Troll: In any case, my fur has not betrayed me yet. I have wandered for so long, I should withstand a while longer.
+Troll: Farewell.
+<<fade Screen out black 1>>
+<<wait 1>>
+<<open Door>>
+<<setVolume BlizzardSound 0.5 1>>
+<<wait 3>>
+<<close Door>>
+<<setVolume BlizzardSound 0.1 1>>
+* SLAM *
+<<teleport Troll HiddenAnchor>>
+<<fade Screen in black 1>>
+<<wait 2>>
+Traveller: He's gone...
+Traveller: I hope he makes it.
+Traveller: I guess all I can do is wait.
+<<fade Screen out black 2>>
+<<setVolume BlizzardSound 0 2>>
+<<wait 2.5>>
+<<eyes Traveller closed>>
+<<setTimeOfDay Effects 6>>
+<<setWeather Effects LightSnow>>
+<<setAmount WoodHolder full>>
+<<fade Screen in black 2>>
+<<wait 2.5>>
+<<eyes Traveller halfClosed>>
+<<wait 0.5>>
+Traveller: I fell asleep...
+<<eyes Traveller open>>
+<<cut Camera InCabinWindowCam>>
+<<playStr Music bittersweet>>
+<<setVolume Music 1 0>>
+Traveller: ?
+Traveller: I slept through the entire night?
+<<teleport Traveller HiddenAnchor>>
+<<teleport TravellerFront InCabinCentreAnchor>>
+<<cut Camera InCabinAloneCam>>
+<<stand TravellerFront>>
+<<wait 1>>
+Traveller: The firewood...
+<<teleport TravellerFront HiddenAnchor>>
+<<cut Camera InCabinWoodHolderCam>>
+Traveller: He made it back!
+Traveller: But where is he now?
+
+<<fade Screen out black 2>>
+<<wait 2>>
+
+<<open Door>>
+<<teleport Troll HiddenAnchor>>
+<<teleport Traveller HiddenAnchor>>
+<<teleport TravellerFront TravellerDefaultAnchor>>
+<<wait 3>>
+<<walk TravellerFront>>
+<<setTimeOfDay Effects 6>>
+<<cut Camera OutsideCabinNearCam>>
+<<burning Fireplace false>>
+<<fade Screen in black 2>>
+<<wait 2>>
+<<slide TravellerFront EpilogueAnchorTraveller 4>>
+<<wait 4>>
+<<stand TravellerFront>>
+<<wait 3>>
+<<fade Screen out black 2>>
+<<wait 2>>
+<<teleport TravellerFront CutsceneCreditsTravellerAnchor>>
+<<walk TravellerFront>>
+<<setTimeOfDay Effects 16>>
+
+<<jump Credits>>
+===
+
+title: Part04_Opt3_TrollBlock
+position: 878,108
+---
+Traveller: Hey, we need to get more firewood...
+Traveller: Are you asleep?
+<<playStr Music long_note>>
+<<setVolume Music 1 0>>
+<<dolly Camera InCabinBlockingDoorCam>>
+<<wait 1.5>>
+<<fade Screen out black 0.2>>
+<<wait 0.2>>
+<<brighten TrollFront>>
+<<fade Screen in black 0.2>>
+<<wait 2.5>>
+Traveller: (He's knocked out cold...)
+Traveller: Hey! Can you move?!
+Traveller: Wake up!
+Traveller: (Am I...? Am I stuck here?)
+<<fade Screen out black 2>>
+<<wait 2>>
+Traveller: Help..! Anybody..?
+
+<<cut Camera OutsideCabinNearCam>>
+<<fade Screen in black 2>>
+<<setVolume BlizzardSound 1 2>>
+<<setVolume Music 0 4>>
+<<wait 5>>
+<<rollCredits Credits 30>>
+<<wait 30>>
+<<fade Screen out black 2>>
+<<wait 3>>
+<<changeGameState Menu>>
+<<jump MainMenuInit>>
+
+===
+
+title: Part04_Opt4_TravellerOut
+position: 879,271
+---
+Traveller: Still... I'm out of firewood...
+<<fade Screen out black 2>>
+<<setVolume BlizzardSound 0 2>>
+<<wait 2>>
+<<eyes Traveller closed>>
+<<shiver Traveller true>>
+<<wait 0.5>>
+<<burning Fireplace false>>
+<<fade Screen in black 1.5>>
+<<setVolume BlizzardSound 0.1 1.5>>
+<<playStr Music long_note>>
+<<setVolume Music 1 0>>
+<<wait 2>>
+Traveller: I either go...
+Traveller: Or freeze...
+Traveller: Or go... and freeze...
+<<eyes Traveller open>>
+<<wait 1>>
+Traveller: Get a hold of yourself...
+Traveller: It's like it's always been...
+<<eyes Traveller close>>
+Traveller: You can only... count... on yourself.
+<<wait 1>>
+<<fade Screen out black 2>>
+<<wait 2>>
+
+<<open Door>>
+<<teleport Chair ChairDefaultAnchor>>
+<<teleport Traveller HiddenAnchor>>
+<<teleport TravellerFront TravellerDefaultAnchor>>
+<<wait 3>>
+<<walk TravellerFront>>
+<<cut Camera OutsideCabinNearCam>>
+<<fade Screen in black 2>>
+<<setVolume BlizzardSound 1 2>>
+<<wait 2>>
+<<slide TravellerFront EpilogueAnchorTraveller 4>>
+<<wait 4>>
+<<tremble TravellerFront>>
+<<wait 3>>
+<<fade Screen out black 2>>
+<<wait 2>>
+<<teleport TravellerFront HiddenAnchor>>
+<<setVolume BlizzardSound 0.5 2>>
+
+<<jump Credits>>
+===
+
+title: Credits
+position: 1189,-8
+---
+<<playCutscene CutsceneCam Credits>>
+<<shake CutsceneCam false>>
+<<fade Screen in black 2>>
+<<rollCredits Credits 40>>
+<<wait 40>>
+<<fade Screen out black 2>>
+<<setVolume Music 0 3>>
+<<wait 3>>
+
+<<changeGameState Menu>>
+<<jump MainMenuInit>>
+===

@@ -1,19 +1,27 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using Yarn.Unity;
 
-public class ScreenFader : MonoBehaviour
+public class ScreenFader : MonoBehaviour, IStateful
 {
+    Color black = Color.black;
+    Color white = Color.white;
+    Color clearBlack = Color.clear;
+    Color clearWhite = new Color(1, 1, 1, 0);
+
+    string fadedInOutState;
+    string fadedColorState;
+
+
     [SerializeField] Image rect;
 
     [YarnCommand("fade")]
     public void Fade(string inOrOut, string blackOrWhite, float duration)
     {
-        Color black = Color.black;
-        Color white = Color.white;
-        Color clearBlack = Color.clear;
-        Color clearWhite = new Color(1, 1, 1, 0);
+        StopAllCoroutines();
+
         Color from, to;
 
         if(blackOrWhite.ToLower().Equals("white"))
@@ -47,7 +55,23 @@ public class ScreenFader : MonoBehaviour
         }
 
         StartCoroutine(LerpToColour(from, to, duration));
+        fadedInOutState = inOrOut;
+        fadedColorState = blackOrWhite;
 
+    }
+
+    public Dictionary<string, string> GetState()
+    {
+        return new Dictionary<string, string>()
+        {
+            { "fadedInOut", fadedInOutState },
+            { "fadedColor", fadedColorState }
+        };
+    }
+
+    public void SetState(Dictionary<string, string> keyValuePairs)
+    {
+        Fade(keyValuePairs["fadedInOut"], keyValuePairs["fadedColor"], 0);
     }
 
     IEnumerator LerpToColour(Color from, Color to, float duration)
@@ -61,6 +85,11 @@ public class ScreenFader : MonoBehaviour
             yield return null;
         }
         rect.color = to;
+    }
+
+    public string GetObjectName()
+    {
+        return gameObject.name;
     }
 
 

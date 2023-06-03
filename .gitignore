@@ -70,3 +70,8 @@ crashlytics-build.properties
 # Temporary auto-generated Android Assets
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
+
+# Third party assets (keep meta files)
+/[Aa]ssets/[Aa]udio/[Tt]hirdParty/*.ogg
+/[Aa]ssets/[Aa]udio/[Tt]hirdParty/*.mp3
+/[Aa]ssets/[Aa]udio/[Tt]hirdParty/*.wav
