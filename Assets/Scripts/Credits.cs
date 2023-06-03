@@ -30,7 +30,7 @@ public class Credits : MonoBehaviour
 
         while (timeElapsed < duration)
         {
-            newPosition.y = Mathf.Lerp(0, (textBoxHeight + canvasHeight) /2, timeElapsed / duration);
+            newPosition.y = Mathf.Lerp(0, (textBoxHeight + canvasHeight), timeElapsed / duration);
             rect.transform.position = newPosition;
             timeElapsed += Time.deltaTime;
             yield return null;

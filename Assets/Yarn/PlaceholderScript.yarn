@@ -97,6 +97,8 @@ Traveller: May as well get some shut-eye.
 <<fade Screen out black 3>>
 <<setVolume BlizzardSound 0 3>>
 <<wait 4>>
+<<playStr Music scary>>
+<<setVolume Music 1 0>>
 
 <<forced Door true>>
 KNOCK. KNOCK.
@@ -551,6 +553,8 @@ Stocked with firewood to keep them warm, the Troll and the Traveller endure the 
 They venture forth, eager to start their next adventure together.
 
 <<open Door>>
+<<playStr Music happy_ending>>
+<<setVolume Music 1 0>>
 <<wait 3>>
 <<teleport Troll HiddenAnchor>>
 <<teleport Traveller HiddenAnchor>>
@@ -622,6 +626,8 @@ Traveller: I guess all I can do is wait.
 Traveller: I fell asleep...
 <<eyes Traveller open>>
 <<cut Camera InCabinWindowCam>>
+<<playStr Music bittersweet>>
+<<setVolume Music 1 0>>
 Traveller: ?
 Traveller: I slept through the entire night?
 <<teleport Traveller HiddenAnchor>>
@@ -667,6 +673,8 @@ position: 878,108
 ---
 Traveller: Hey, we need to get more firewood...
 Traveller: Are you asleep?
+<<playStr Music long_note>>
+<<setVolume Music 1 0>>
 <<dolly Camera InCabinBlockingDoorCam>>
 <<wait 1.5>>
 <<fade Screen out black 0.2>>
@@ -685,6 +693,7 @@ Traveller: Help..! Anybody..?
 <<cut Camera OutsideCabinNearCam>>
 <<fade Screen in black 2>>
 <<setVolume BlizzardSound 1 2>>
+<<setVolume Music 0 4>>
 <<wait 5>>
 <<rollCredits Credits 30>>
 <<wait 30>>
@@ -708,6 +717,8 @@ Traveller: Still... I'm out of firewood...
 <<burning Fireplace false>>
 <<fade Screen in black 1.5>>
 <<setVolume BlizzardSound 0.1 1.5>>
+<<playStr Music long_note>>
+<<setVolume Music 1 0>>
 <<wait 2>>
 Traveller: I either go...
 Traveller: Or freeze...
@@ -739,6 +750,7 @@ Traveller: You can only... count... on yourself.
 <<fade Screen out black 2>>
 <<wait 2>>
 <<teleport TravellerFront HiddenAnchor>>
+<<setVolume BlizzardSound 0.5 2>>
 
 <<jump Credits>>
 ===
@@ -749,9 +761,10 @@ position: 1189,-8
 <<playCutscene CutsceneCam Credits>>
 <<shake CutsceneCam false>>
 <<fade Screen in black 2>>
-<<rollCredits Credits 30>>
-<<wait 30>>
+<<rollCredits Credits 40>>
+<<wait 40>>
 <<fade Screen out black 2>>
+<<setVolume Music 0 3>>
 <<wait 3>>
 
 <<changeGameState Menu>>
